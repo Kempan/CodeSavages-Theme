@@ -29,14 +29,50 @@ function codesavages_load_more(){
     'paged' => $paged
   );
 
-  if($archive != '0'){
-    $archVal = explode('/', $archive);
-    $type = ($archVal[1] == 'category' ? 'category_name' : $archVal[1]);
-    $args[$type] = $archVal[2];
-    $page_trail = '/' .$archVal[1]. '/' .$archVal[2]. '/';
-  } else {
-    $page_trail = '';
-  }
+  if( $archive != '0' ){
+		
+		$archVal = explode( '/', $archive );
+		$flipped = array_flip($archVal);
+		
+		switch( isset( $flipped ) ) {
+			
+			case $flipped["category"] :
+				$type = "category_name";
+				$key = "category";
+				break;
+				
+			case $flipped["tag"] :
+				$type = "tag";
+				$key = $type;
+				break;
+				
+			case $flipped["author"] :
+				$type = "author";
+				$key = $type;
+				break;
+			
+		}
+		
+		$currKey = array_keys( $archVal, $key );
+		$nextKey = $currKey[0]+1;
+		$value = $archVal[ $nextKey ];
+			
+		$args[ $type ] = $value;
+		
+		//check page trail and remove "page" value
+		if( isset( $flipped['page'] ) ){
+			
+			$pageVal = explode( 'page', $archive );
+			$page_trail = $pageVal[0];
+			
+		} else {
+			$page_trail = $archive;
+		}
+		
+	} else {
+		$page_trail = '/';
+	}
+
 
   $query = new WP_Query($args);
 
