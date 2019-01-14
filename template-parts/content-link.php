@@ -18,7 +18,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
     <?php 
       
       $link = codesavages_grab_link();
-      the_title('<h1 class="entry-title"><a href="' . $link . '" target="_blank">', '<div class="link-icon">'.$linkPic.'</div></a></h1>');
+      the_title('<h1 class="entry-title"><a href="' . $link . '" target="_blank">', '<div class="link-icon"><i class="fas fa-link"></i></div></a></h1>');
       
     ?>
 

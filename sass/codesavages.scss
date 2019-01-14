@@ -189,6 +189,9 @@ h1{ font-size: 48px; font-weight: 200; color: white;
 	------------------------------------------------
 */
 .codesavages-format-link{
+  .fa-link{
+    font-size:40px;
+  }
   h1{
     &.entry-title{
       &:before, &:after { display: none; }

@@ -5,10 +5,8 @@
 ?>
 
 
-
 <div id="primary" class="content-area">
   <main id="main" class="site-main">
-
     <?php if(is_paged()) : ?>
 
       <div class="button-container text-center container-load-prev">
