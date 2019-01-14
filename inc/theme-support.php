@@ -118,6 +118,20 @@ function codesavages_grab_link(){
   return esc_url_raw($links[1]);
 }
 
+function codesavage_get_bs_slides($attachments){
+    $output = array();
+    $i = 0;
+    foreach($attachments as $attachment):
+        $active = ($i == 0 ? 'active' : '');
+        $output[$i] = array(
+            'class'     =>  $active,
+            'url'       =>  wp_get_attachment_url($attachment->ID),
+            'caption'   =>  $attachments[$i]->post_excerpt
+        );
+        $i++;
+    endforeach;
+    return $output;
+}
 /*
   ---------- Custom Footer ----------
 */
