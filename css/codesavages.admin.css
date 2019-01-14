@@ -1,0 +1,45 @@
+.codesavages-sidebar-preview,
+.codesavages-general-form{
+  display: inline-blog;
+  float: left;
+}
+.codesavages-sidebar-preview{
+width: 280;
+background-color: #1F1F1F;
+padding: 20px;
+text-align: center;
+margin-right: 20px;
+}
+.codesavages-sidebar{
+  display: block;
+  text-align: center;
+}
+h1.codesavages-username,
+h2.codesavages-description{
+  font-weight: 100;
+  color: #fff;
+}
+h1.codesavages-username{
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+h2.codesavages-description{
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+.codesavages-image-container{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.codesavages-profile-picture{
+  width: 182px;
+  height: 182px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 20px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
