@@ -1,4 +1,4 @@
-s<?php
+<?php
 /**
  * Bootstrap NavWalker
  * Class Name: Bootstrap_NavWalker
