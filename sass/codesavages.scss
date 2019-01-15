@@ -43,32 +43,32 @@ a { color: white; @include animate( color, 320ms );
 	------------------------------------------------
 */
 .navbar-codesavages{ text-align: center; border: none; border-radius: 0; min-height: auto; margin-bottom: 0;
-  background: rgba(236, 236, 236, 0.7); border-top: 1px solid rgba(236, 236, 236, 0.7); border-bottom: 1px solid rgba(236, 236, 236, 0.7);
-  ul{ flex-direction: row; }
-  li{ float: none;
+  background: rgba(255, 255, 255, 0.7); border-top: 1px solid rgba(255, 255, 255, 0.7); border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  
+  li{ float: none; display: inline-block;
     &.active {
       a{ opacity: 1;
         &:after{ @include transform(translateY(0)); opacity: 1; }
       }
     }
     &.open{
-      a { opacity: 1; background-color: rgba(0,0,0,0.1)!important;
+      a { opacity: 1; background-color: rgba(255, 255, 255, 0.1)!important;
 				&:after { @include transform( translateY(10px) ); opacity: 0!important; }
 				&:hover,
 				&:focus,
-				&:visited { background-color: rgba(0,0,0,0.1)!important;
+				&:visited { background-color: rgba(255, 255, 255, 0.1)!important;
 					&:after { @include transform( translateY(10px) ); opacity: 0!important; }
 				}
 			}
     }
-    a{ text-decoration: none; text-transform: uppercase; color: black; opacity: 0.7; letter-spacing: 0.05em;
-      background: none; text-shadow: 0 1px 1px rgb(0, 0, 0); @include animate(opacity, 320ms);
+    a{ text-decoration: none; text-transform: uppercase; color: rgb(255, 255, 255); opacity: 0.7; letter-spacing: 0.05em;
+      background: none; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.769); @include animate(opacity, 320ms);
       &:hover,
       &:focus,
       &:visited { background: none; opacity: 1;
         &:after { opacity: 1; @include transform(translateY(0)); }
       }
-      &:after { content: ''; display: block; left: 0; bottom: 0; height: 2px; background:rgba(41, 41, 41, 0.68);
+      &:after { content: ''; display: block; left: 0; bottom: 0; height: 2px; background:rgb(255, 255, 255);
       opacity: 0; @include animate(all, 320ms); @include transform(translateY(10px)); }
     }
     ul.dropdown-menu { border: 0; border-radius: 0; background: rgba(0,0,0,0.75); 
@@ -76,13 +76,18 @@ a { color: white; @include animate( color, 320ms );
 				a {
 					&:hover,
 					&:focus,
-					&:visited { background: rgba(0,0,0,0.25)!important; color: #fff; }
+					&:visited { background: rgba(255, 255, 255, 0.25)!important; color: #fff; }
 				}
 			}
 		}
   }
 }
-.navbar-nav{ justify-content: space-around; width: 100%; }
+.navbar-nav {
+  float:none;
+  margin:0 auto;
+  display: block;
+  text-align: center;
+}
 
 /* 
 	Standard Post Format
@@ -292,7 +297,7 @@ h1{ font-size: 48px; font-weight: 200; color: white;
   }
   .entry-footer{
     border-bottom: none;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     padding-right: 10px;
     margin-top: 0;
   }
