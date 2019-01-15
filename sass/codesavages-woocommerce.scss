@@ -28,10 +28,9 @@
             }
         }
     }
-
 }
 
-//PRODUCTS
+//Products
 .codesavages-woocommerce-container{
     .products{
         .type-product {
@@ -53,6 +52,25 @@
             }
 
           }
+        }
+    }
+}
+
+//Cart
+.woocommerce-cart-form{
+    .product-name{
+        a:hover{
+          color: white;
+        }
+    }
+    .product-remove{
+        a:hover{
+          background-color:unset;
+        }
+    }
+    .coupon{
+        #coupon_code{
+          width: 100px;
         }
     }
 }
