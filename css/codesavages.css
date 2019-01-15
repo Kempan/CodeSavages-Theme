@@ -235,15 +235,12 @@ a:hover, a:focus {
   border-radius: 0;
   min-height: auto;
   margin-bottom: 0;
-  background: rgba(236, 236, 236, 0.7);
-  border-top: 1px solid rgba(236, 236, 236, 0.7);
-  border-bottom: 1px solid rgba(236, 236, 236, 0.7);
-}
-.navbar-codesavages ul {
-  flex-direction: row;
+  background: rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
 }
 .navbar-codesavages li {
   float: none;
+  display: inline-block;
 }
 .navbar-codesavages li.active a {
   opacity: 1;
@@ -258,7 +255,7 @@ a:hover, a:focus {
 }
 .navbar-codesavages li.open a {
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 .navbar-codesavages li.open a:after {
   -webkit-transform: translateY(10px);
@@ -269,7 +266,7 @@ a:hover, a:focus {
   opacity: 0 !important;
 }
 .navbar-codesavages li.open a:hover, .navbar-codesavages li.open a:focus, .navbar-codesavages li.open a:visited {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 .navbar-codesavages li.open a:hover:after, .navbar-codesavages li.open a:focus:after, .navbar-codesavages li.open a:visited:after {
   -webkit-transform: translateY(10px);
@@ -282,11 +279,11 @@ a:hover, a:focus {
 .navbar-codesavages li a {
   text-decoration: none;
   text-transform: uppercase;
-  color: black;
-  opacity: 0.7;
+  color: white;
+  opacity: 0.75;
   letter-spacing: 0.05em;
   background: none;
-  text-shadow: 0 1px 1px black;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.769);
   -webkit-transition: opacity 320ms ease;
   -moz-transition: opacity 320ms ease;
   -ms-transition: opacity 320ms ease;
@@ -311,7 +308,7 @@ a:hover, a:focus {
   left: 0;
   bottom: 0;
   height: 2px;
-  background: rgba(41, 41, 41, 0.68);
+  background: white;
   opacity: 0;
   -webkit-transition: all 320ms ease;
   -moz-transition: all 320ms ease;
@@ -333,13 +330,15 @@ a:hover, a:focus {
   display: block;
 }
 .navbar-codesavages li ul.dropdown-menu li a:hover, .navbar-codesavages li ul.dropdown-menu li a:focus, .navbar-codesavages li ul.dropdown-menu li a:visited {
-  background: rgba(0, 0, 0, 0.25) !important;
+  background: rgba(255, 255, 255, 0.25) !important;
   color: #fff;
 }
 
 .navbar-nav {
-  justify-content: space-around;
-  width: 100%;
+  float: none;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
 }
 
 /* 
@@ -616,7 +615,7 @@ h1.entry-title:after {
 }
 .codesavages-format-aside .entry-footer {
   border-bottom: none;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   padding-right: 10px;
   margin-top: 0;
 }
