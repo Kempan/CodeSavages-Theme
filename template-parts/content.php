@@ -28,7 +28,7 @@
     </div>
     
     <div class="button-container text-center">
-        <a href="<?php the_permalink(); ?>"><button class="btn btn-outline-light"><?php _e('Read More') ?></button></a>
+      <a href="<?php the_permalink(); ?>"><button class="btn btn-outline-light"><?php _e('Read More') ?></button></a>
     </div>
 
   </div>

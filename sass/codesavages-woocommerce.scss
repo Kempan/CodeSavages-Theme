@@ -1,0 +1,76 @@
+/*
+  IMPORTS
+*/
+
+@import 'base/mixins';
+@import 'base/placeholders';
+
+
+
+/*
+    WOOCOMMERCE STYLE
+*/
+
+//Categories
+.codesavages-woocommerce-container{
+    .page-title{
+      text-align: center;
+      margin: 20px 0 20px 0;
+    }
+    .product-category{
+        text-align: center;
+        a{
+          @include animate(all, 500ms);
+          color: grey;
+            &:hover,
+            &:focus {
+              color: white;
+            }
+        }
+    }
+}
+
+//Products
+.codesavages-woocommerce-container{
+    .products{
+        .type-product {
+          text-align: center;
+          img {
+            transform: scale(1.0);
+            @include animate(all, 500ms);
+            &:focus,
+            &:hover {
+              transform: scale(1.15);
+            }
+          }
+          .woocommerce-LoopProduct-link {
+            @include animate(all, 500ms);
+            color: grey;
+            &:hover,
+            &:focus {
+              color: white;
+            }
+
+          }
+        }
+    }
+}
+
+//Cart
+.woocommerce-cart-form{
+    .product-name{
+        a:hover{
+          color: white;
+        }
+    }
+    .product-remove{
+        a:hover{
+          background-color:unset;
+        }
+    }
+    .coupon{
+        #coupon_code{
+          width: 100px;
+        }
+    }
+}

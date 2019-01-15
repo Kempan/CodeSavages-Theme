@@ -58,13 +58,11 @@
     <div class="entry-content">
         <div class="entry-excerpt text-center">
             <?php the_excerpt(); ?>
-
         </div>
 
         <div class="button-container text-center">
-            <a href="<?php the_permalink(); ?>" class="btn btn-outline-secondary btn-codesavage"><?php _e('Read More') ?></a>
+            <a href="<?php the_permalink(); ?>" class="btn btn-outline-light"><?php _e('Read More') ?></a>
         </div>
-
     </div>
 
     <footer class="entry-footer">
