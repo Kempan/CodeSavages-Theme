@@ -43,6 +43,7 @@ add_action('init', 'codesavages_theme_setup');
 function codesavages_load_scripts(){
   wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap-css/bootstrap.min.css', array(), '4.1.3', 'all');
   wp_enqueue_style('codesavages', get_template_directory_uri() . '/css/codesavages.css', array(), '1.0.0', 'all');
+  wp_enqueue_style('codesavages-woocommerce', get_template_directory_uri() . '/css/codesavages-woocommerce.css', array(), '1.0.0', 'all');
   wp_enqueue_style('fontawesome', get_template_directory_uri() . '/css/font-awesome-all.min.css', array(), '5.6.3', 'all');
 
 
