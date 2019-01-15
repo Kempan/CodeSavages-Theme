@@ -6,12 +6,11 @@
 
 ?>
 
-
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
 
-            <div class="container codesavages-posts-container">
+            <div class="container codesavages-woocommerce-container">
                 <?php woocommerce_content(); ?>
             </div>
 
