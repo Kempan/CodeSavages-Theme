@@ -18,11 +18,14 @@
       margin: 20px 0 20px 0;
     }
     .product-category{
-        .count{
-          display: none;
-        }
-        .woocommerce-loop-category__title{
-          text-align: center;
+        text-align: center;
+        a{
+          @include animate(all, 500ms);
+          color: grey;
+            &:hover,
+            &:focus {
+              color: white;
+            }
         }
     }
 
@@ -31,23 +34,25 @@
 //PRODUCTS
 .codesavages-woocommerce-container{
     .products{
-      text-align: center;
-        img{
-          transform: scale(1.0);
-          @include animate(all, 500ms);
-          &:focus,
-          &:hover{
-            transform: scale(1.15);
+        .type-product {
+          text-align: center;
+          img {
+            transform: scale(1.0);
+            @include animate(all, 500ms);
+            &:focus,
+            &:hover {
+              transform: scale(1.15);
+            }
           }
-        }
-        .woocommerce-LoopProduct-link{
-          @include animate(all, 500ms);
-          color:grey;
+          .woocommerce-LoopProduct-link {
+            @include animate(all, 500ms);
+            color: grey;
             &:hover,
-            &:focus{
-              color:white;
+            &:focus {
+              color: white;
             }
 
+          }
         }
     }
 }
