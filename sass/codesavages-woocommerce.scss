@@ -81,5 +81,16 @@
 }
 //Checkout
 
+.woocommerce-checkout{
+    .col-6{
+      .form-row{
+        width: 100%;
+          .input-text{
+              text-align:right;
+          }
+      }
+    }
+
+}
 
 
