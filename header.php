@@ -42,7 +42,7 @@
         <div class="header-content table">
           <div class="table-cell">
           
-            <img class="profil-container background-image" src="https://scontent-dus1-1.xx.fbcdn.net/v/t1.0-9/22788716_10155875205433556_1237395042326519438_n.jpg?_nc_cat=107&_nc_ht=scontent-dus1-1.xx&oh=cd0917e178e424fc38d998098a6cd1d3&oe=5CD24408">
+           <!--image for header here -->
             
             <h1 class="site-title">
               <?php bloginfo( 'name' ); ?>
