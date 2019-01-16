@@ -31,3 +31,37 @@ $(function () {
     return;
   });
 });
+
+$(function () {
+  let mediaUploader;
+  $('#upload-logo-button').on('click', function (e) {
+    e.preventDefault();
+    if (mediaUploader) {
+      mediaUploader.open();
+      return;
+    }
+    mediaUploader = wp.media.frames.file_frame = wp.media({
+      title: 'Upload your Logo',
+      button: {
+        text: 'Upload logo'
+      },
+      multiple: false
+    });
+    mediaUploader.on('select', function () {
+      attachment = mediaUploader.state().get('selection').first().toJSON();
+      $('#navbar-logo').val(attachment.url);
+      $('#replace-navbar-logo').css('background-image', 'url(' + attachment.url + ')');
+    });
+    mediaUploader.open();
+  });
+
+  $('#remove-logo').on('click', function (e) {
+    e.preventDefault();
+    const answer = confirm("Are you sure you want to remove your Logo?");
+    if (answer) {
+      $('#navbar-logo').val('');
+      $('.codesavages-general-form').submit();
+    }
+    return;
+  });
+});

@@ -60,7 +60,7 @@ function codesavages_navbar_slogan(){
 }
 //sparar valen
 register_setting('codesavages-navbar-group','navbar_logo');
-register_setting('codesavages-navbar-group','navbar_slogan');
+register_setting('codesavages-navbar-group','slogan');
 
   //<------------------SIDEBAR ------------------>
   //SKAPAR TITEL OCH CALLBACK PARAGRAF
