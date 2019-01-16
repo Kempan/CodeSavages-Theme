@@ -11,3 +11,7 @@ function checkHeaderImage(){
         echo get_template_directory_uri() . '/img/example_header.jpg';
     endif;
 }
+
+
+
+
