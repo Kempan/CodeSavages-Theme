@@ -27,5 +27,5 @@
   <?php settings_fields('codesavages-settings-group'); ?>
   <?php do_settings_sections('codesavages') ?>
   <!-- ATTRIBUTE 3 BYTER ID FÖR ATT INTE STÖRA INPUT SUBMIT  -->
-  <?php submit_button('Save Changese', 'primary', 'btnSubmit'); ?>
+  <?php submit_button('Save Changes', 'primary', 'btnSubmit'); ?>
 </form>

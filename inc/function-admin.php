@@ -12,12 +12,16 @@
 //ALLT CONTANT SOM SKRIVS UT FRÅN TEMPLATES
 //SKAPAR CODESAVAGES MENY OCH SUBS
 function codesavages_add_admin_page(){
+
+  //adminsida
   add_menu_page('Codesavages Theme Options','Codesavages','manage_options','codesavages','codesavages_sidebar_page','',110);
 
+  //subsidor
   add_submenu_page('codesavages','Codesavages Sidebar Options','Sidebar','manage_options','codesavages','codesavages_sidebar_page');
   add_submenu_page('codesavages','Codesavages Theme Options','Theme Options','manage_options','codesavages_theme','codesavages_theme_options_page');
   add_submenu_page('codesavages','Codesavages Contact Options','Contact Options','manage_options','codesavages_contact','codesavages_contact_page');
   add_submenu_page('codesavages','Codesavages CSS Options','Custom CSS','manage_options','codesavages_css','codesavages_css_settings_page');
+  add_submenu_page('codesavages','Codesavages Header & Nav Options',' Header & Nav','manage_options','codesavages_nav','codesavages_nav_settings_page');
 
   add_action('admin_init', 'codesavages_custom_settings');
 }
@@ -25,6 +29,38 @@ add_action('admin_menu', 'codesavages_add_admin_page');
 
 //SUBS INNEHÅLL PÅ CODESAVAGES MENY
 function codesavages_custom_settings(){
+
+//<------------------ Header & Nav Options------------------>
+
+add_settings_section('codesavages-nav-header-options','Header & Nav Options','codesavages_nav_header_options','codesavages_theme_header_nav');
+
+//paragraphs
+function codesavages_nav_header_options(){
+  echo 'Customize your Header & Navbar';
+}
+
+//Settings and Info field
+add_settings_field('navbar-logo','Navbar Logo','codesavages_navbar_logo','codesavages_theme_header_nav','codesavages-nav-header-options');
+add_settings_field('navbar-slogan','Slogan','codesavages_navbar_slogan','codesavages_theme_header_nav','codesavages-nav-header-options');
+//callback
+function codesavages_navbar_logo(){
+  $logo = esc_attr(get_option('navbar_logo'));
+  if(empty($logo)){
+    echo '<input type="button" class="button button-secondary" value="Upload navbar logo" id="upload-logo-button" />
+    <input type="hidden" id="navbar-logo" name="navbar_logo" value="'.$logo.'" />';
+  } else {
+    echo '<input type="button" class="button button-secondary" value="Replace navbar logo" id="upload-logo-button" />
+    <input type="hidden" id="navbar-logo" name="navbar_logo" value="'.$logo.'" /><input type="button" 
+    class="button button-secondary" value="Remove" id="remove-logo"';
+  }
+}
+function codesavages_navbar_slogan(){
+  $slogan = esc_attr(get_option('slogan'));
+  echo '<input type="text" name="slogan" value="'.$slogan.'" placeholder="Slogan" />';
+}
+//sparar valen
+register_setting('codesavages-navbar-group','navbar_logo');
+register_setting('codesavages-navbar-group','navbar_slogan');
 
   //<------------------SIDEBAR ------------------>
   //SKAPAR TITEL OCH CALLBACK PARAGRAF
@@ -187,4 +223,8 @@ function codesavages_contact_page(){
 //CUSTOM CSS
 function codesavages_css_settings_page(){
   require_once(get_template_directory() . '/inc/templates/codesavages-custom-css.php');
+}
+// Navbar & Header Options Template
+function codesavages_nav_settings_page(){
+  require_once(get_template_directory() . '/inc/templates/codesavages-nav-header.php');
 }
