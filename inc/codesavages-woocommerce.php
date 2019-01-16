@@ -24,9 +24,13 @@ add_theme_support('woocommerce');
 remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 
 add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );
-
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
 
 function woo_remove_category_products_count() {
     return;
 }
 
+function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
