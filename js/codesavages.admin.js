@@ -1,3 +1,5 @@
+
+// media uploader for sidebar picture
 $(function () {
   let mediaUploader;
   $('#upload-button').on('click', function (e) {
@@ -32,6 +34,10 @@ $(function () {
   });
 });
 
+
+
+
+//mediauploader for navbar and header
 $(function () {
   let mediaUploader;
   $('#upload-logo-button').on('click', function (e) {
