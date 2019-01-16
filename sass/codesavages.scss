@@ -15,9 +15,9 @@
   .table-cell { display: table-cell; width: 100%; height: 100%; vertical-align: middle; }
 }
 
-a { color: white; @include animate( color, 320ms );
+a { color: rgb(26, 26, 26); @include animate( color, 320ms );
 	&:hover,
-	&:focus { text-decoration: none; color: rgb(131, 131, 131); }
+	&:focus { text-decoration: none; color: rgb(65, 65, 65); }
 }
 
 // .btn{ height: 50px; width: 200px; }
@@ -36,7 +36,6 @@ a { color: white; @include animate( color, 320ms );
   border-radius: 50%;
   height: 166px;
   width: 166px;
-  background-image: url('https://scontent-dus1-1.xx.fbcdn.net/v/t1.0-9/22788716_10155875205433556_1237395042326519438_n.jpg?_nc_cat=107&_nc_ht=scontent-dus1-1.xx&oh=cd0917e178e424fc38d998098a6cd1d3&oe=5CD24408');
 }
 
 /* 
@@ -94,10 +93,10 @@ a { color: white; @include animate( color, 320ms );
 	Standard Post Format
 	------------------------------------------------
 */
-article{ padding-bottom: 40px; padding-top: 40px; color: white; }
+article{ padding-bottom: 40px; padding-top: 40px; color: rgb(40, 40, 40); }
 
-h1{ font-size: 48px; font-weight: 200; color: white;
-  a{ color: white;
+h1{ font-size: 48px; font-weight: 200; color: rgb(40, 40, 40);
+  a{ color: rgb(40, 40, 40);
     // &:hover { color: red;}
   }
   &.entry-title{ margin: 0 20px; padding: 0;
@@ -106,8 +105,8 @@ h1{ font-size: 48px; font-weight: 200; color: white;
     &:after { margin-left: 10px; }
   }
 }
-.entry-meta{ font-size: 13px; font-weight: 300; color:white; margin-bottom: 20px;
-  a{ font-weight: 500; color:white;
+.entry-meta{ font-size: 13px; font-weight: 300; color:rgb(40, 40, 40); margin-bottom: 20px;
+  a{ font-weight: 500; color:rgb(40, 40, 40);
     &:focus { color: rgb(0, 0, 0)}
   }
 }
@@ -126,7 +125,7 @@ h1{ font-size: 48px; font-weight: 200; color: white;
   p{ font-size: 16px; line-height: 1.5em; font-weight: 300; letter-spacing: 0.02em;}
 }
 .button-container{ margin-bottom: 30px;}
-.entry-footer{ margin-top: 50px; padding: 10px 5px; border-bottom: 4px solid white; color:white; text-transform: uppercase;}
+.entry-footer{ margin-top: 50px; padding: 10px 5px; border-bottom: 4px solid rgb(40, 40, 40); color:rgb(40, 40, 40); text-transform: uppercase;}
 
 /* 
 	Image Post Format
@@ -142,9 +141,9 @@ h1{ font-size: 48px; font-weight: 200; color: white;
   h1,
   .entry-meta,
   .entry-header{
-    color: #ffffff;
+    color: rgb(40, 40, 40);
     a{
-      color: #ffffff;
+      color: rgb(40, 40, 40);
     }
   }
   h1{
@@ -262,7 +261,7 @@ h1{ font-size: 48px; font-weight: 200; color: white;
       &:before, &:after { display: none; }
       .link-icon{
         display: block;
-        color: white;
+        color: rgb(40, 40, 40);
       }
     }
   }
@@ -320,7 +319,7 @@ h1{ font-size: 48px; font-weight: 200; color: white;
 	------------------------------------------------
 */
 .codesavages-footer{
-  color: white;
+  color: rgb(255, 255, 255);
   background-color: #333;
   padding: 20px 0;
   display: block;
@@ -336,7 +335,7 @@ h1{ font-size: 48px; font-weight: 200; color: white;
 }
 
 .codesavages-posts-container{
-  color: white;
+  color: rgb(40, 40, 40);
   padding-top: 40px;
   article{
     @include animate(all, 320ms);
