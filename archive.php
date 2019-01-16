@@ -43,7 +43,7 @@
     </div>
 
     <div class="button-container text-center">
-      <button type="button" class="btn btn-outline-light codesavages-load-button" data-page="<?php echo codesavages_check_paged(1); ?>" data-archive="<?php echo $_SERVER["REQUEST_URI"]; ?>" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+      <button type="button" class="btn btn-outline-dark codesavages-load-button" data-page="<?php echo codesavages_check_paged(1); ?>" data-archive="<?php echo $_SERVER["REQUEST_URI"]; ?>" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
         <span class="text">Load more</span>
         <i class="fas fa-spinner loader"></i>
       </button>
