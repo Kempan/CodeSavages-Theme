@@ -57,20 +57,29 @@
 }
 
 //Cart
-.woocommerce-cart-form{
-    .product-name{
-        a:hover{
-          color: white;
-        }
+.woocommerce-checkout{
+    .entry-title{
+      &:after,&:before{
+        content:none;
+      }
     }
-    .product-remove{
-        a:hover{
-          background-color:unset;
+    .woocommerce-cart-form{
+        .product-name{
+            a:hover{
+              color: white;
+            }
         }
-    }
-    .coupon{
-        #coupon_code{
-          width: 100px;
+        .product-remove{
+            a:hover{
+              background-color:unset;
+            }
+        }
+        .coupon{
+            #coupon_code{
+              width: 100px;
+            }
         }
     }
 }
+
+//Checkout

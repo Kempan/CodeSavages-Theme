@@ -37,7 +37,7 @@
 
   <div class="container-fluid">
 		<div class="row">
-      <div class="header-container background-image text-center" style="background-image: url(<?php header_image(); ?>);">
+      <div class="header-container background-image text-center" style="background-image: url(<?php checkHeaderImage(); ?>);">
         
         <div class="header-content table">
           <div class="table-cell">
