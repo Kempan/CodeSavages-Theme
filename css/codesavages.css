@@ -176,7 +176,7 @@ a img.aligncenter {
 }
 
 a {
-  color: white;
+  color: #1a1a1a;
   -webkit-transition: color 320ms ease;
   -moz-transition: color 320ms ease;
   -ms-transition: color 320ms ease;
@@ -185,7 +185,7 @@ a {
 }
 a:hover, a:focus {
   text-decoration: none;
-  color: #838383;
+  color: #414141;
 }
 
 /* 
@@ -222,7 +222,6 @@ a:hover, a:focus {
   border-radius: 50%;
   height: 166px;
   width: 166px;
-  background-image: url("https://scontent-dus1-1.xx.fbcdn.net/v/t1.0-9/22788716_10155875205433556_1237395042326519438_n.jpg?_nc_cat=107&_nc_ht=scontent-dus1-1.xx&oh=cd0917e178e424fc38d998098a6cd1d3&oe=5CD24408");
 }
 
 /* 
@@ -348,16 +347,16 @@ a:hover, a:focus {
 article {
   padding-bottom: 40px;
   padding-top: 40px;
-  color: white;
+  color: #282828;
 }
 
 h1 {
   font-size: 48px;
   font-weight: 200;
-  color: white;
+  color: #282828;
 }
 h1 a {
-  color: white;
+  color: #282828;
 }
 h1.entry-title {
   margin: 0 20px;
@@ -378,12 +377,12 @@ h1.entry-title:after {
 .entry-meta {
   font-size: 13px;
   font-weight: 300;
-  color: white;
+  color: #282828;
   margin-bottom: 20px;
 }
 .entry-meta a {
   font-weight: 500;
-  color: white;
+  color: #282828;
 }
 .entry-meta a:focus {
   color: black;
@@ -436,8 +435,8 @@ h1.entry-title:after {
 .entry-footer {
   margin-top: 50px;
   padding: 10px 5px;
-  border-bottom: 4px solid white;
-  color: white;
+  border-bottom: 4px solid #282828;
+  color: #282828;
   text-transform: uppercase;
 }
 
@@ -452,12 +451,12 @@ h1.entry-title:after {
 .codesavages-image-format h1,
 .codesavages-image-format .entry-meta,
 .codesavages-image-format .entry-header {
-  color: #ffffff;
+  color: #282828;
 }
 .codesavages-image-format h1 a,
 .codesavages-image-format .entry-meta a,
 .codesavages-image-format .entry-header a {
-  color: #ffffff;
+  color: #282828;
 }
 .codesavages-image-format h1 {
   padding-top: 10px;
@@ -572,7 +571,7 @@ h1.entry-title:after {
 }
 .codesavages-format-link h1.entry-title .link-icon {
   display: block;
-  color: white;
+  color: #282828;
 }
 
 /* 
@@ -641,7 +640,7 @@ h1.entry-title:after {
 }
 
 .codesavages-posts-container {
-  color: white;
+  color: #282828;
   padding-top: 40px;
 }
 .codesavages-posts-container article {
