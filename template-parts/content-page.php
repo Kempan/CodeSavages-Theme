@@ -15,7 +15,11 @@
         <?php the_title( '<h1 class="entry-title">', '</h1>'); ?>
 
         <div class="entry-meta">
-            <?php echo codesavages_posted_meta(); ?>
+            <?php
+                if(!is_cart()):
+                echo codesavages_posted_meta();
+                endif;
+            ?>
         </div>
 
     </header>
