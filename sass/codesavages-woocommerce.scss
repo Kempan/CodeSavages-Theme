@@ -55,7 +55,9 @@
         }
     }
 }
-
+.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+  float: none;
+}
 //Cart
 .woocommerce-checkout{
     .entry-title{
