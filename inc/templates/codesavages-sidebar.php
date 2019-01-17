@@ -2,10 +2,15 @@
 <?php settings_errors(); ?>
 <?php
   $picture = esc_attr(get_option('profile_picture'));
-  $firstName = esc_attr(get_option('first_name'));
-  $lastName = esc_attr(get_option('last_name'));
-  $fullName = $firstName . ' ' . $lastName;
+  // $firstName = esc_attr(get_option('first_name'));
+  // $lastName = esc_attr(get_option('last_name'));
+  // $fullName = $firstName . ' ' . $lastName;
+  $companyName = esc_attr(get_option('company_name'));
   $description = esc_attr(get_option('description'));
+
+  $twitter_icon = esc_attr( get_option( 'twitter_handler' ) );
+	$facebook_icon = esc_attr( get_option( 'facebook_handler' ) );
+  $instagram_icon = esc_attr( get_option( 'instagram_handler' ) );
 ?>
 
 <div class="codesavages-sidebar-preview">
@@ -15,7 +20,7 @@
         
       </div>
     </div>
-    <h1 class="codesavages-username"><?php print $fullName; ?></h1>
+    <h1 class="codesavages-username"><?php print $companyName; ?></h1>
     <h2 class="codesavages-description"><?php print $description; ?></h2>
     <div class="codesavages-image-wapper">
 
@@ -26,6 +31,5 @@
 <form method="post" action="options.php" class="codesavages-general-form">
   <?php settings_fields('codesavages-settings-group'); ?>
   <?php do_settings_sections('codesavages') ?>
-  <!-- ATTRIBUTE 3 BYTER ID FÖR ATT INTE STÖRA INPUT SUBMIT  -->
   <?php submit_button('Save Changes', 'primary', 'btnSubmit'); ?>
 </form>

@@ -69,14 +69,16 @@ register_setting('codesavages-navbar-group','slogan');
   function codesavages_sidebar_options(){
     echo 'Customize your sidebar information';
   }
-  //SKAPAR INFOFÄLTEN MED CALLBACK NEDAN. KALLAS PÅ I CODESAVAGES-ADMIN.PHP
+  //SKAPAR INFOFÄLTEN MED CALLBACK NEDAN. KALLAS PÅ I CODESAVAGES-SIDEBAR.PHP
   add_settings_field('sidebar-profile-picture','Profile picture:','codesavages_sidebar_profile_picture','codesavages','codesavages-sidebar-options');
-  add_settings_field('sidebar-name','Full Name:','codesavages_sidebar_name','codesavages','codesavages-sidebar-options');
+  add_settings_field('sidebar-name','Company Name:','codesavages_sidebar_name','codesavages','codesavages-sidebar-options');
   add_settings_field('sidebar-description','Description:','codesavages_sidebar_description','codesavages','codesavages-sidebar-options');
   add_Settings_field('sidebar-twitter', 'Twitter handler:','codesavages_sidebar_twitter','codesavages','codesavages-sidebar-options' );
   add_Settings_field('sidebar-facebook', 'Facebook handler:','codesavages_sidebar_facebook','codesavages','codesavages-sidebar-options' );
   add_Settings_field('sidebar-instagram', 'Instagram handler:','codesavages_sidebar_instagram','codesavages','codesavages-sidebar-options' );
-  //CALLBACK
+  
+  //CALLBACKS
+
   function codesavages_sidebar_profile_picture(){
     $picture = esc_attr(get_option('profile_picture'));
     if(empty($picture)){
@@ -89,9 +91,11 @@ register_setting('codesavages-navbar-group','slogan');
     }
   }
   function codesavages_sidebar_name(){
-    $firstName = esc_attr(get_option('first_name'));
-    $lastName = esc_attr(get_option('last_name'));
-    echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First Name" /><input type="text" name="last_name" value="'.$lastName.'" placeholder="Last Name" />';
+    // $firstName = esc_attr(get_option('first_name'));
+    // $lastName = esc_attr(get_option('last_name'));
+    // echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First Name" /><input type="text" name="last_name" value="'.$lastName.'" placeholder="Last Name" />';
+    $companyName = esc_attr(get_option('company_name'));
+    echo '<input type="text" name="company_name" value="'.$companyName.'" placeholder="Company Name" />';
   }
   function codesavages_sidebar_description(){
     $description = esc_attr(get_option('description'));
@@ -111,8 +115,9 @@ register_setting('codesavages-navbar-group','slogan');
   }
   //SPARAR NER INFOFÄLTENS VAL
   register_setting('codesavages-settings-group','profile_picture');
-  register_setting('codesavages-settings-group','first_name');
-  register_setting('codesavages-settings-group','last_name');
+  // register_setting('codesavages-settings-group','first_name');
+  // register_setting('codesavages-settings-group','last_name');
+  register_setting('codesavages-settings-group','company_name');
   register_setting('codesavages-settings-group','description');
   register_setting('codesavages-settings-group','twitter_handler', 'codesavages_sanitize_twitter_handler');
   register_setting('codesavages-settings-group','facebook_handler');

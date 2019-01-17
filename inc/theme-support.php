@@ -37,7 +37,7 @@ if(@$background == 1){
 }
 
 /*
-  ---------- Nav Menu ----------
+  ---------- Nav Menu Option ----------
 */
 function codesavages_register_nav_menu(){
   register_nav_menu('primary', 'Header Navigation Menu');
@@ -50,10 +50,34 @@ add_action('after_setup_theme', 'codesavages_register_nav_menu');
 */
 add_theme_support('post-thumbnails');
 
+/*
+	========================
+		SIDEBAR FUNCTIONS
+	========================
+*/
+
+function codesavages_sidebar_init(){
+
+  register_sidebar(
+    array(
+      'name' => esc_html__('CodeSavages Sidebar', 'codesavagestheme'),
+      'id' => 'codesavages-sidebar',
+      'description' => 'Dynamic Right Sidebar',
+      'before_widget' => '<section id="%1$s" class="codesavages-widget %2$s">',
+      'after_widget' => '</section>',
+      'before_title' => '<h2 class="codesavages-widget-title">',
+      'after_title' => '</h2>'
+    )
+  );
+}
+add_action('widgets_init', 'codesavages_sidebar_init');
 
 /*
-  ---------- Bloggloop Custom Functions ----------
+	========================
+		BLOG LOOP CUSTOM FUNCTIONS
+	========================
 */
+
 function codesavages_posted_meta(){
 
   $posted_on = human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago';
@@ -132,9 +156,13 @@ function codesavage_get_bs_slides($attachments){
     endforeach;
     return $output;
 }
+
 /*
-  ---------- Custom Footer ----------
+	========================
+		CUSTOM FOOTER
+	========================
 */
+
 function codesavages_posted_footer(){
 
   $comments_num = get_comments_number();
