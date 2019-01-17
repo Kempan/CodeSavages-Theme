@@ -88,6 +88,9 @@
                   'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
               ) );
               ?>
+                <div class="mini-cart">
+                    <?php echo sk_wcmenucart(); ?>
+                </div>
 
             </div>
           </nav>

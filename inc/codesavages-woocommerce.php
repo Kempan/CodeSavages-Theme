@@ -38,11 +38,10 @@ function wcs_woo_remove_reviews_tab($tabs) {
 
 
 //------------Cart function-------------
-function sk_wcmenucart($menu, $args) {
+function sk_wcmenucart() {
 
     //check if woocommerce is activated
     if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-
 
 
         global $woocommerce;
@@ -62,7 +61,7 @@ function sk_wcmenucart($menu, $args) {
             }
 
             $menu_item .= $cart_contents_count;
-            $menu_item .= '<i class="fa fa-shopping-cart"></i> ';
+            $menu_item .= '<i class="fa fa-shopping-cart"></i>';
             $menu_item .= ' / '. $cart_total;
             $menu_item .= '</a></li>';
 
