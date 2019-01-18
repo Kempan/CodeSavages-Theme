@@ -153,3 +153,22 @@ function codesavages_posted_footer(){
   }
   return '<div class="post-footer-container"><div class="row"><div class="col-xs-12 col-sm-6">'. get_the_tag_list('<div class="tags-list"><i class="fas fa-tag"></i>Tags: ', ', ', '</div>') .'</div><div class="col-xs-12 col-sm-6 text-right"><i class="fas fa-comment"></i>'. $comments .'</div></div></div>';
 }
+
+/*
+	========================
+		SINGLE POST CUSTOM FUNCTIONS
+	========================
+*/
+
+function codesavages_post_navigation(){
+
+  $prev = get_previous_post_link('<div class="post-link-nav"><i class="fas fa-arrow-left"></i> %link</div>', '%title');
+  $next = get_next_post_link('<div class="post-link-nav">%link <i class="fas fa-arrow-right"></i></div>', '%title');
+
+  $nav = '<div class="row">';
+  $nav .= '<div class="col-xs-12 col-sm-6">' .$prev. '</div>';
+  $nav .= '<div class="col-xs-12 col-sm-6 text-right">' .$next. '</div>';
+  $nav .= '</div>';
+
+  echo $nav;
+}

@@ -13,7 +13,7 @@
               while( have_posts()): the_post();
 
                 get_template_part('template-parts/single', get_post_format());
-                the_post_navigation();
+                codesavages_post_navigation();
 
                 if(comments_open()):
                   comments_template();
