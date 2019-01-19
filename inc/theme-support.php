@@ -8,7 +8,7 @@
 
 
 /*
-  ---------- Post Formats ----------
+  ---------- POST FORMATS ----------
 */
 $options = get_option('post_formats');
 $formats = array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat');
@@ -21,7 +21,7 @@ if(!empty($options)){
 }
 
 /*
-  ---------- Custom Header ----------
+  ---------- CUSTOM HEADER ----------
 */
 $header = get_option('custom_header');
 if(@$header == 1){
@@ -29,7 +29,7 @@ if(@$header == 1){
 }
 
 /*
-  ---------- Custom Background ----------
+  ---------- CUSTOM BACKGROUND ----------
 */
 $background = get_option('custom_background');
 if(@$background == 1){
@@ -37,7 +37,7 @@ if(@$background == 1){
 }
 
 /*
-  ---------- Nav Menu Option ----------
+  ---------- NAV MENU OPTIONS ----------
 */
 function codesavages_register_nav_menu(){
   register_nav_menu('primary', 'Header Navigation Menu');
@@ -46,9 +46,14 @@ add_action('after_setup_theme', 'codesavages_register_nav_menu');
 
 
 /*
-  ---------- Thumbnails ----------
+  ---------- THUMBNAILS ----------
 */
 add_theme_support('post-thumbnails');
+
+/*
+  ---------- ACTIVATE HTML5 FEATURES ----------
+*/
+add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
 
 /*
 	========================

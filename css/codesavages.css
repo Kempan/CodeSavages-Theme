@@ -594,6 +594,8 @@ h1.entry-title:after {
 }
 .post-link-nav a {
   padding: 0 5px;
+  line-height: 20px;
+  font-size: 18px;
 }
 .post-link-nav a:hover, .post-link-nav a:focus {
   color: grey;

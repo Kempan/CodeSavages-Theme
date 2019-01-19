@@ -286,6 +286,7 @@ h1{ font-size: 48px; font-weight: 200; color: rgb(40, 40, 40);
   padding: 10px 0;
   a{
     padding: 0 5px;
+    line-height: 20px; font-size: 18px;
     &:hover,
     &:focus{
       color: grey;
