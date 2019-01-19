@@ -33,10 +33,29 @@
 
 <body <?php body_class(); ?>>
 
+  <div class="codesavages-sidebar sidebar-closed">
+		<div class="codesavages-sidebar-container">
+
+      <a class="js-toggleSidebar sidebar-close">
+        <i class="fas fa-angle-double-right sidebar-icon"></i>
+      </a>
+
+      <div class="sidebar-scroll">
+        
+        <?php get_sidebar(); ?>
+        
+      </div>
+    </div>
+	</div>
+
   <div class="container-fluid">
 		<div class="row">
       <div class="header-container background-image text-center" style="background-image: url(<?php checkHeaderImage(); ?>);">
         
+        <a class="js-toggleSidebar sidebar-open">
+          <i class="fas fa-bars sidebar-icon"></i>
+        </a>
+
         <div class="header-content table">
           <div class="table-cell">
           
@@ -50,27 +69,32 @@
         </div>
         
         <div class="nav-container">
-        <nav class="navbar navbar-expand-lg navbar-codesavages">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+          <nav class="navbar navbar-expand-lg navbar-codesavages">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                        <div class="collapse navbar-collapse" id="navbar-content">
-                            <?php
-                            wp_nav_menu( array(
-                                'theme_location' => 'primary', // Defined when registering the menu
-                                'menu_id'        => 'primary-menu',
-                                'container'      => false,
-                                'depth'          => 2,
-                                'menu_class'     => 'navbar-nav ml-auto',
-                                'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
-                                'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
-                            ) );
-                            ?>
-                        </div>
-                    </nav>
-        </div>
-        
-      </div>
-		</div>
-	</div>
+            <div class="collapse navbar-collapse" id="navbar-content">
+                
+              <?php
+              wp_nav_menu( array(
+                  'theme_location' => 'primary', // Defined when registering the menu
+                  'menu_id'        => 'primary-menu',
+                  'container'      => false,
+                  'depth'          => 2,
+                  'menu_class'     => 'navbar-nav ml-auto',
+                  'walker'         => new Bootstrap_NavWalker(), // This controls the display of the Bootstrap Navbar
+                  'fallback_cb'    => 'Bootstrap_NavWalker::fallback', // For menu fallback
+              ) );
+              ?>
+                <div class="mini-cart">
+                    <?php echo sk_wcmenucart(); ?>
+                </div>
+
+            </div>
+          </nav>
+        </div> <!-- nav-container -->    
+      </div> <!-- header-container -->
+		</div> <!-- row -->
+	</div> <!-- container-fluid -->

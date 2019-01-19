@@ -683,4 +683,125 @@ h1.entry-title:after {
   animation-timing-function: linear;
 }
 
+/* 
+	Sidebar Section
+	------------------------------------------------
+*/
+.codesavages-sidebar {
+  position: fixed;
+  color: white;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1F1F1F;
+  height: 100vh;
+  width: 100%;
+  max-width: 280px;
+  -webkit-transition: transform 320ms ease;
+  -moz-transition: transform 320ms ease;
+  -ms-transition: transform 320ms ease;
+  -o-transition: transform 320ms ease;
+  transition: transform 320ms ease;
+}
+.codesavages-sidebar.sidebar-closed {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.codesavages-sidebar a {
+  color: white;
+}
+.codesavages-sidebar img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.codesavages-sidebar-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  padding-top: 40px;
+}
+
+.sidebar-close {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  cursor: pointer;
+}
+.sidebar-close .sidebar-icon {
+  font-size: 30px;
+}
+.sidebar-close .sidebar-icon:hover, .sidebar-close .sidebar-icon:focus {
+  color: grey;
+}
+
+.sidebar-open {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+.sidebar-open .sidebar-icon {
+  color: white;
+  font-size: 25px;
+}
+.sidebar-open .sidebar-icon:hover, .sidebar-open .sidebar-icon:focus {
+  color: grey;
+}
+
+/* 
+	Admin Declared Classes
+	------------------------------------------------
+*/
+.codesavages-profile-picture {
+  width: 182px;
+  height: 182px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 20px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1.codesavages-username,
+h2.codesavages-description {
+  font-weight: 100;
+  color: #fff;
+}
+
+h1.codesavages-username {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+h2.codesavages-description {
+  font-size: 18px;
+}
+
+.codesavages-image-container {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.codesavages-icons-wrapper {
+  margin-bottom: 30px;
+}
+.codesavages-icons-wrapper svg {
+  font-size: 30px;
+  margin: 10px;
+}
+
+.codesavages-widget {
+  text-align: center;
+}
+
 /*# sourceMappingURL=codesavages.css.map */
