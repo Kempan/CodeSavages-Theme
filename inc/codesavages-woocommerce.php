@@ -16,7 +16,7 @@ echo '<section id="main">';
     function my_theme_wrapper_end() {
     echo '</section>';
 }
-add_theme_support('woocommerce');
+add_theme_support('woocommerce') ;
 
 
 
