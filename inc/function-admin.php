@@ -21,7 +21,8 @@ function codesavages_add_admin_page(){
   add_submenu_page('codesavages','Codesavages Theme Options','Theme Options','manage_options','codesavages_theme','codesavages_theme_options_page');
   add_submenu_page('codesavages','Codesavages Contact Options','Contact Options','manage_options','codesavages_contact','codesavages_contact_page');
   add_submenu_page('codesavages','Codesavages CSS Options','Custom CSS','manage_options','codesavages_css','codesavages_css_settings_page');
-  add_submenu_page('codesavages','Codesavages Header & Nav Options',' Header & Nav','manage_options','codesavages_nav','codesavages_nav_settings_page');
+  add_submenu_page('codesavages','Codesavages Header & Nav Options','Header & Nav','manage_options','codesavages_nav','codesavages_nav_settings_page');
+  add_submenu_page('codesavages','Codesavages Custom Footer','Custom Footer','manage_options','codesavages_footer','codesavages_footer_settings_page');
 
   add_action('admin_init', 'codesavages_custom_settings');
 }
@@ -66,6 +67,7 @@ register_setting('codesavages-navbar-group','slogan');
   //SKAPAR TITEL OCH CALLBACK PARAGRAF
   add_settings_section('codesavages-sidebar-options','Sidebar Options','codesavages_sidebar_options','codesavages');
   //PARAGRAF
+
   function codesavages_sidebar_options(){
     echo 'Customize your sidebar information';
   }
@@ -76,7 +78,38 @@ register_setting('codesavages-navbar-group','slogan');
   add_Settings_field('sidebar-twitter', 'Twitter handler:','codesavages_sidebar_twitter','codesavages','codesavages-sidebar-options' );
   add_Settings_field('sidebar-facebook', 'Facebook handler:','codesavages_sidebar_facebook','codesavages','codesavages-sidebar-options' );
   add_Settings_field('sidebar-instagram', 'Instagram handler:','codesavages_sidebar_instagram','codesavages','codesavages-sidebar-options' );
-  
+
+  //--------------CUSTOM FOOTER-------------------//
+
+    register_setting('codesavages-footer-group', 'left_first');
+    register_setting('codesavages-footer-group', 'left_second');
+    register_setting('codesavages-footer-group', 'left_third');
+
+    register_setting('codesavages-footer-group', 'right_first');
+    register_setting('codesavages-footer-group', 'right_second');
+    register_setting('codesavages-footer-group', 'right_third');
+
+    add_settings_section('codesavages-footer-options','Customize footer', 'codesavages_custom_footer_options','codesavages_footer');
+
+
+    //Left Section
+    add_settings_field('custom-footer-section-left-1','Section 1 Row 1','codesavages_custom_footer_left_first','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-left-2','Section 1 Row 2','codesavages_custom_footer_left_second','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-left-3','Section 1 Row 3','codesavages_custom_footer_left_third','codesavages_footer','codesavages-footer-options');
+    //Right Section
+    add_settings_field('custom-footer-section-right-1','Section 2 Row 1','codesavages_custom_footer_right_first','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-right-2','Section 2 Row 2','codesavages_custom_footer_right_second','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-right-3','Section 2 Row 3','codesavages_custom_footer_right_third','codesavages_footer','codesavages-footer-options');
+
+
+    function codesavages_custom_footer_options(){
+        echo '<p>Customize footer with 2 sections</p>';
+    }
+
+
+
+
+
   //CALLBACKS
 
   function codesavages_sidebar_profile_picture(){
@@ -183,7 +216,35 @@ register_setting('codesavages-navbar-group','slogan');
     $checked = (@$options == 1 ? 'checked' : '');
     echo '<label><input type="checkbox" id="activate_contact_form" name="activate_contact_form" value="1" '.$checked.' /></label>';
   }
-  
+
+    //<-------------- CUSTOM FOOTER ------------------>
+        //LEFT SECTION
+    function codesavages_custom_footer_left_first(){
+        $firstFirst = esc_attr(get_option('left_first'));
+        echo '<input type="text" name="left_first" value="'.$firstFirst.'" placeholder="Left, row 1" />';
+    }
+    function codesavages_custom_footer_left_second(){
+        $firstSecond = esc_attr(get_option('left_second'));
+        echo '<input type="text" name="left_second" value="'.$firstSecond.'"  placeholder="Left, row 2" />';
+    }
+    function codesavages_custom_footer_left_third(){
+        $firstThird = esc_attr(get_option('left_third'));
+        echo '<input type="text" name="left_third" value="'.$firstThird.'" placeholder="Left, row 3" />';
+    }
+        //RIGHT SECTION
+    function codesavages_custom_footer_right_first(){
+        $secondFirst = esc_attr(get_option('right_first'));
+        echo '<input type="text" name="right_first" value="'.$secondFirst.'" placeholder="Right, row 1" />';
+    }
+    function codesavages_custom_footer_right_second(){
+        $secondSecond = esc_attr(get_option('right_second'));
+        echo '<input type="text" name="right_second" value="'.$secondSecond.'" placeholder="Right, row 2" />';
+    }
+    function codesavages_custom_footer_right_third(){
+        $secondThird = esc_attr(get_option('right_third'));
+        echo '<input type="text" name="right_third" value="'.$secondThird.'" placeholder="Right, row 3" />';
+    }
+
 
   //<-------------- CUSTOM CSS OPTIONS ------------------>
   //SKAPAR TITEL OCH CALLBACK PARAGRAF I CONTACT OPTIONS
@@ -224,12 +285,15 @@ function codesavages_theme_options_page(){
 function codesavages_contact_page(){
   require_once(get_template_directory() . '/inc/templates/codesavages-contact.php');
 }
-
 //CUSTOM CSS
 function codesavages_css_settings_page(){
   require_once(get_template_directory() . '/inc/templates/codesavages-custom-css.php');
 }
-// Navbar & Header Options Template
+//Navbar & Header Options Template
 function codesavages_nav_settings_page(){
   require_once(get_template_directory() . '/inc/templates/codesavages-nav-header.php');
+}
+//Custom Footer
+function codesavages_footer_settings_page(){
+    require_once(get_template_directory() . '/inc/templates/codesavages-custom-footer.php');
 }
