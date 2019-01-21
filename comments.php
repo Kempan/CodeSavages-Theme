@@ -22,24 +22,7 @@ if(post_password_required()){
     ?>
   </h2>
 
-  <?php if(get_comment_pages_count() > 1 && get_option('page_comments')): ?>
-      <nav id="comment-nav-top" class="comment-navigation" role="navigation">
-        <div class="row">
-          <div class="col-xs-12 col sm-6">
-            <div class="post-link-nav">
-              <i class="fas fa-arrow-left"></i>
-              <?php previous_comments_link(esc_html__('Older Comments', 'codesavagestheme')) ?>
-            </div>
-          </div>
-          <div class="col-xs-12 col sm-6">
-            <div class="post-link-nav">
-              <i class="fas fa-arrow-right"></i>
-              <?php next_comments_link(esc_html__('Newer Comments', 'codesavagestheme')) ?>
-            </div>
-          </div>
-        </div>
-      </nav>
-  <?php endif; ?>
+  <?php codesavages_get_post_navigation(); ?>
 
   <ol class="comment-list">
 
@@ -66,24 +49,7 @@ if(post_password_required()){
 
   </ol>
 
-  <?php if(get_comment_pages_count() > 1 && get_option('page_comments')): ?>
-      <nav id="comment-nav-bottom" class="comment-navigation" role="navigation">
-        <div class="row">
-          <div class="col-xs-12 col sm-6">
-            <div class="post-link-nav">
-              <i class="fas fa-arrow-left"></i>
-              <?php previous_comments_link(esc_html__('Older Comments', 'codesavagestheme')) ?>
-            </div>
-          </div>
-          <div class="col-xs-12 col sm-6">
-            <div class="post-link-nav">
-              <i class="fas fa-arrow-right"></i>
-              <?php next_comments_link(esc_html__('Newer Comments', 'codesavagestheme')) ?>
-            </div>
-          </div>
-        </div>
-      </nav>
-  <?php endif; ?>
+  <?php codesavages_get_post_navigation(); ?>
 
   <?php
     if(!comments_open() && get_comments_number()):
@@ -96,6 +62,31 @@ if(post_password_required()){
   <?php
     endif;
   ?>
-  <?php comment_form(); ?>
+
+  <?php
+
+    $fields =  array(
+      
+      'author'  =>
+      '<div class="form-group"><label for="author">' . __('Name', 'domainreference') . '</label><span class="required">*</span>
+      <input id="author" name="author" type="text" class="form-control" value="' . esc_attr($commenter['comment_author']) . '" required="required"/></div>',
+      
+      'email'   =>
+      '<div class="form-group"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> <span class="required">*</span>
+      <input id="email" name="email" class="form-control" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" required="required" /></div>',
+
+      'uri'     =>
+      '<div class="form-group last-field"><label for="url">' . __( 'Website', 'domainreference' ) . '</label><input id="url" name="url" class="form-control" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" /></div>'
+    );
+
+    $args = array(
+      'class_submit'    => 'btn btn-block btn-outline-dark',
+      'label_submit'    => __('Submit Comment'),
+      'comment_field'   => '<div class="form-group"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <span class="required">*</span><textarea id="comment" class="form-control" name="comment" rows="4" required="required"></textarea></p>',
+      'fields'          => apply_filters('comment_form_default_fields', $fields)
+    );
+    comment_form($args);
+
+  ?>
 
 </div>

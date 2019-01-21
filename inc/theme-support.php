@@ -205,3 +205,9 @@ function codesavages_post_navigation(){
 
   return $nav;
 }
+
+function codesavages_get_post_navigation(){
+  if(get_comment_pages_count() > 1 && get_option('page_comments')):
+    require(get_template_directory() . '/inc/templates/codesavages-comment-nav.php');
+  endif;
+}
