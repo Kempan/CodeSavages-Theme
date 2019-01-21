@@ -1,3 +1,7 @@
+/*
+  --- Sidebar Admin Css ---
+*/
+
 .codesavages-sidebar-preview,
 .codesavages-general-form{
   display: inline-blog;
@@ -38,6 +42,54 @@ h2.codesavages-description{
   height: 182px;
   overflow: hidden;
   border-radius: 50%;
+  margin: 20px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+  --- navbar/header Admin Css ---
+*/
+
+.codesavages-logo-preview,
+.codesavages-general-form{
+  display: inline-blog;
+  float: left;
+}
+.codesavages-logo-preview{
+width: 280;
+background-color: rgb(176, 176, 176);
+padding: 20px;
+text-align: center;
+margin-right: 20px;
+}
+.codesavages-navbar{
+ 
+  
+}
+#replace-navbar-logo{
+  float:left;
+}
+h2.codesavages-navbar-slogan{
+  font-size: 13px;
+  margin: 25px 0px 0px 5px;
+  float:left;
+  font-weight: 100;
+  color: #fff;
+
+}
+.codesavages-logo-container{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  float:left;
+}
+.codesavages-navbar-logo{
+  width: 80px;
+  height: 30px;
+  overflow: hidden;
   margin: 20px auto;
   background-position: center center;
   background-repeat: no-repeat;
