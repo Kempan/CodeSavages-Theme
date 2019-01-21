@@ -176,7 +176,7 @@ function codesavages_posted_footer(){
     if($comments_num == 0){
       $comments = __('No comments');
     } else if($comments_num > 1){
-      $comments = $comments_num . __('Comments');
+      $comments = $comments_num . __(' Comments');
     } else {
       $comments = __('1 Comment');
     }
