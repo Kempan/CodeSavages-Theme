@@ -203,5 +203,5 @@ function codesavages_post_navigation(){
   $nav .= '<div class="col-xs-12 col-sm-6 text-right">' .$next. '</div>';
   $nav .= '</div>';
 
-  echo $nav;
+  return $nav;
 }
