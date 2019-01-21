@@ -21,7 +21,8 @@ function codesavages_add_admin_page(){
   add_submenu_page('codesavages','Codesavages Theme Options','Theme Options','manage_options','codesavages_theme','codesavages_theme_options_page');
   add_submenu_page('codesavages','Codesavages Contact Options','Contact Options','manage_options','codesavages_contact','codesavages_contact_page');
   add_submenu_page('codesavages','Codesavages CSS Options','Custom CSS','manage_options','codesavages_css','codesavages_css_settings_page');
-  add_submenu_page('codesavages','Codesavages Header & Nav Options',' Header & Nav','manage_options','codesavages_nav','codesavages_nav_settings_page');
+  add_submenu_page('codesavages','Codesavages Header & Nav Options','Header & Nav','manage_options','codesavages_nav','codesavages_nav_settings_page');
+  add_submenu_page('codesavages','Codesavages Custom Footer','Custom Footer','manage_options','codesavages_footer','codesavages_footer_settings_page');
 
   add_action('admin_init', 'codesavages_custom_settings');
 }
@@ -224,12 +225,15 @@ function codesavages_theme_options_page(){
 function codesavages_contact_page(){
   require_once(get_template_directory() . '/inc/templates/codesavages-contact.php');
 }
-
 //CUSTOM CSS
 function codesavages_css_settings_page(){
   require_once(get_template_directory() . '/inc/templates/codesavages-custom-css.php');
 }
-// Navbar & Header Options Template
+//Navbar & Header Options Template
 function codesavages_nav_settings_page(){
   require_once(get_template_directory() . '/inc/templates/codesavages-nav-header.php');
+}
+//Custom Footer
+function codesavages_footer_settings_page(){
+    require_once(get_template_directory() . '/inc/templates/codesavages-custom-footer.php');
 }
