@@ -88,6 +88,22 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
   display: block;
   text-align: center;
 }
+.navbar-brand{
+  color: white;
+  font-weight: bold;
+  text-shadow: none;
+  opacity: 1;
+}
+@media (max-width: 770px) {
+  .navbar-nav {
+    float: none;
+    margin: 0 auto;
+    display: grid;
+    text-align: center;
+  }
+
+}
+
 
 /* 
 	Standard Post Format

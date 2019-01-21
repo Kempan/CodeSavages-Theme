@@ -7,7 +7,10 @@
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-
+<?php 
+$logo = esc_attr(get_option('navbar_logo'));
+$slogan = esc_attr(get_option('slogan'));
+?>
   <head>
     <title><?php bloginfo('name'); wp_title(); ?></title>
     <meta name="description" content="<?php bloginfo('description'); ?>" >
@@ -70,9 +73,12 @@
         
         <div class="nav-container">
           <nav class="navbar navbar-expand-lg navbar-codesavages">
-            
+          <a class="navbar-brand" href="#">
+            <img src="<?php print $logo ?>" width="80" height="30" class="d-inline-block align-top" alt="">
+            <?php print $slogan ?>
+          </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-              <span class="navbar-toggler-icon"></span>
+            <i class="fa fa-bars"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbar-content">

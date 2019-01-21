@@ -10,11 +10,11 @@
   <div class="codesavages-navbar">
     <div class="codesavages-logo-container">
       <div id="replace-navbar-logo" class="codesavages-navbar-logo" style="background-image: url(<?php print $logo ?>)">
-        
       </div>
+      <h2 class="codesavages-navbar-slogan"><?php print $slogan; ?></h2>
     </div>
     
-    <h2 class="codesavages-navbar-slogan"><?php print $slogan; ?></h2>
+    
     <div class="codesavages-image-wapper">
 
     </div>
