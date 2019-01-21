@@ -6,7 +6,7 @@
     $secondSecond = esc_attr(get_option('right_second'));
     $secondThird = esc_attr(get_option('right_third'));
 ?>
-<footer class="page-footer font-small teal pt-4">
+<footer class="codesavages-footer  page-footer font-small teal pt-4">
 
     <div class="container-fluid text-center text-md-left">
 
