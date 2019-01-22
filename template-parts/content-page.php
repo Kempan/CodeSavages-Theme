@@ -1,48 +1,25 @@
 <?php
-
 /*
-
-@package sunsettheme
--- Page Template
-
+  ---------- pageTemplate ----------
 */
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header text-center">
+<article id="post-<?php the_ID(); ?>" <?php post_class('codesavages-format-standard'); ?>>
 
-        <?php the_title( '<h1 class="entry-title">', '</h1>'); ?>
+  <header class="entry-header text-center">
 
-        <div class="entry-meta">
-            <?php
-                if(!is_cart()):
-                echo codesavages_posted_meta();
-                endif;
-            ?>
-        </div>
+    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
-    </header>
+    
 
-    <div class="entry-content clearfix">
+  </header>
 
-        <?php the_content(); ?>
+  <div class="entry-content clearfix">
 
-    </div><!-- .entry-content -->
+    <?php the_content(); ?>
+
+  </div>
+
+  
 
 </article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

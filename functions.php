@@ -12,3 +12,4 @@ require get_template_directory() . '/bootstrap-navwalker.php';
 require get_template_directory() . '/inc/codesavages-woocommerce.php';
 require get_template_directory() . '/inc/default.php';
 require get_template_directory() . '/inc/widgets.php';
+require get_template_directory() . '/inc/shortcodes.php';
