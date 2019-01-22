@@ -81,10 +81,17 @@ register_setting('codesavages-navbar-group','slogan');
 
   //--------------CUSTOM FOOTER-------------------//
 
+    register_setting('codesavages-footer-group', 'left_header');
     register_setting('codesavages-footer-group', 'left_first');
     register_setting('codesavages-footer-group', 'left_second');
     register_setting('codesavages-footer-group', 'left_third');
 
+    register_setting('codesavages-footer-group', 'mid_header');
+    register_setting('codesavages-footer-group', 'mid_first');
+    register_setting('codesavages-footer-group', 'mid_second');
+    register_setting('codesavages-footer-group', 'mid_third');
+
+    register_setting('codesavages-footer-group', 'right_header');
     register_setting('codesavages-footer-group', 'right_first');
     register_setting('codesavages-footer-group', 'right_second');
     register_setting('codesavages-footer-group', 'right_third');
@@ -93,13 +100,21 @@ register_setting('codesavages-navbar-group','slogan');
 
 
     //Left Section
-    add_settings_field('custom-footer-section-left-1','Section 1 Row 1','codesavages_custom_footer_left_first','codesavages_footer','codesavages-footer-options');
-    add_settings_field('custom-footer-section-left-2','Section 1 Row 2','codesavages_custom_footer_left_second','codesavages_footer','codesavages-footer-options');
-    add_settings_field('custom-footer-section-left-3','Section 1 Row 3','codesavages_custom_footer_left_third','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-left-header','<h3>Header Left</h3>','codesavages_custom_footer_left_header','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-left-1','Section Left Row 1','codesavages_custom_footer_left_first','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-left-2','Section Left Row 2','codesavages_custom_footer_left_second','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-left-3','Section Left Row 3','codesavages_custom_footer_left_third','codesavages_footer','codesavages-footer-options');
+    //Mid Section
+    add_settings_field('custom-footer-section-mid-header','<h3>Header Mid</h3>','codesavages_custom_footer_mid_header','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-mid-1','Section Mid Row 1','codesavages_custom_footer_mid_first','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-mid-2','Section Mid Row 2','codesavages_custom_footer_mid_second','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-mid-3','Section Mid Row 3','codesavages_custom_footer_mid_third','codesavages_footer','codesavages-footer-options');
+
     //Right Section
-    add_settings_field('custom-footer-section-right-1','Section 2 Row 1','codesavages_custom_footer_right_first','codesavages_footer','codesavages-footer-options');
-    add_settings_field('custom-footer-section-right-2','Section 2 Row 2','codesavages_custom_footer_right_second','codesavages_footer','codesavages-footer-options');
-    add_settings_field('custom-footer-section-right-3','Section 2 Row 3','codesavages_custom_footer_right_third','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-right-header','<h3>Header Right</h3>','codesavages_custom_footer_right_header','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-right-1','Section Right Row 1','codesavages_custom_footer_right_first','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-right-2','Section Right Row 2','codesavages_custom_footer_right_second','codesavages_footer','codesavages-footer-options');
+    add_settings_field('custom-footer-section-right-3','Section Right Row 3','codesavages_custom_footer_right_third','codesavages_footer','codesavages-footer-options');
 
 
     function codesavages_custom_footer_options(){
@@ -219,6 +234,10 @@ register_setting('codesavages-navbar-group','slogan');
 
     //<-------------- CUSTOM FOOTER ------------------>
         //LEFT SECTION
+    function codesavages_custom_footer_left_header(){
+        $firstHeader = esc_attr(get_option('left_header'));
+        echo '<input type="text" name="left_header" value="'.$firstHeader.'" placeholder="Left, header" />';
+    }
     function codesavages_custom_footer_left_first(){
         $firstFirst = esc_attr(get_option('left_first'));
         echo '<input type="text" name="left_first" value="'.$firstFirst.'" placeholder="Left, row 1" />';
@@ -231,7 +250,29 @@ register_setting('codesavages-navbar-group','slogan');
         $firstThird = esc_attr(get_option('left_third'));
         echo '<input type="text" name="left_third" value="'.$firstThird.'" placeholder="Left, row 3" />';
     }
+        //MID SECTION
+    function codesavages_custom_footer_mid_header(){
+        $midHeader = esc_attr(get_option('mid_header'));
+        echo '<input type="text" name="mid_header" value="'.$midHeader.'" placeholder="Mid, header" />';
+    }
+    function codesavages_custom_footer_mid_first(){
+        $midFirst = esc_attr(get_option('mid_first'));
+        echo '<input type="text" name="mid_first" value="'.$midFirst.'" placeholder="Mid, row 1" />';
+    }
+    function codesavages_custom_footer_mid_second(){
+        $midSecond = esc_attr(get_option('mid_second'));
+        echo '<input type="text" name="mid_second" value="'.$midSecond.'" placeholder="Mid, row 2" />';
+    }
+    function codesavages_custom_footer_mid_third(){
+        $midthird = esc_attr(get_option('mid_third'));
+        echo '<input type="text" name="mid_third" value="'.$midthird.'" placeholder="Mid, row 3" />';
+    }
+
         //RIGHT SECTION
+    function codesavages_custom_footer_right_header(){
+        $secondHeader = esc_attr(get_option('right_header'));
+        echo '<input type="text" name="right_header" value="'.$secondHeader.'" placeholder="Right, header" />';
+    }
     function codesavages_custom_footer_right_first(){
         $secondFirst = esc_attr(get_option('right_first'));
         echo '<input type="text" name="right_first" value="'.$secondFirst.'" placeholder="Right, row 1" />';
