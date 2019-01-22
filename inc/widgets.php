@@ -93,6 +93,7 @@ class Codesavages_Footer_Widget_Left extends WP_Widget{
 
     //Front-end display of widget
     public function widget($args, $instance){
+        $headerLeft = esc_attr(get_option('left_header'));
         $firstFirst = esc_attr(get_option('left_first'));
         $firstSecond = esc_attr(get_option('left_second'));
         $firstThird = esc_attr(get_option('left_third'));
@@ -101,7 +102,7 @@ class Codesavages_Footer_Widget_Left extends WP_Widget{
         ?>
 
 
-            <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+            <h5 class="text-uppercase font-weight-bold"><?php echo $headerLeft ?></h5>
             <p><?php echo $firstFirst ?></p>
             <p><?php echo $firstSecond ?></p>
             <p><?php echo $firstThird ?></p>
@@ -135,6 +136,7 @@ class Codesavages_Footer_Widget_Right extends WP_Widget{
 
     //Front-end display of widget
     public function widget($args, $instance){
+        $headerRight = esc_attr(get_option('right_header'));
         $secondFirst = esc_attr(get_option('right_first'));
         $secondSecond = esc_attr(get_option('right_second'));
         $secondThird = esc_attr(get_option('right_third'));
@@ -142,7 +144,7 @@ class Codesavages_Footer_Widget_Right extends WP_Widget{
         echo $args['before_widget'];
         ?>
 
-        <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+        <h5 class="text-uppercase font-weight-bold"><?php echo $headerRight ?></h5>
         <p><?php echo $secondFirst ?></p>
         <p><?php echo $secondSecond ?></p>
         <p><?php echo $secondThird ?></p>
@@ -175,18 +177,19 @@ class Codesavages_Footer_Widget_Mid extends WP_Widget{
 
     //Front-end display of widget
     public function widget($args, $instance){
-        $secondFirst = esc_attr(get_option('right_first'));
-        $secondSecond = esc_attr(get_option('right_second'));
-        $secondThird = esc_attr(get_option('right_third'));
+        $midHeader = esc_attr(get_option('mid_header'));
+        $midFirst = esc_attr(get_option('mid_first'));
+        $midSecond = esc_attr(get_option('mid_second'));
+        $midThird = esc_attr(get_option('mid_third'));
 
         echo $args['before_widget'];
         ?>
 
 
-        <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
-        <p><?php echo $secondFirst ?></p>
-        <p><?php echo $secondSecond ?></p>
-        <p><?php echo $secondThird ?></p>
+        <h5 class="text-uppercase font-weight-bold"><?php echo $midHeader ?></h5>
+        <p><?php echo $midFirst ?></p>
+        <p><?php echo $midSecond ?></p>
+        <p><?php echo $midThird ?></p>
 
 
         <?php
