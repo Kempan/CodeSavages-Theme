@@ -1,4 +1,4 @@
-<form action="#" methid="post">
+<form id="codesavagesContactForm" action="#" methid="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Your Name" id="name" name="name" required="required">

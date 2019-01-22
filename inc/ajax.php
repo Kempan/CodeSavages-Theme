@@ -10,8 +10,13 @@
 
 // Access for Admin and logged in users
 add_action('wp_ajax_codesavages_load_more', 'codesavages_load_more');
+
+add_action('wp_ajax_codesavages_save_user_contact_form', 'codesavages_save_contact');
+
 // Access for eveyone
 add_action('wp_ajax_nopriv_codesavages_load_more', 'codesavages_load_more');
+
+add_action('wp_ajax_nopriv_codesavages_save_user_contact_form', 'codesavages_save_contact');
 
 function codesavages_load_more(){
 
@@ -103,4 +108,16 @@ function codesavages_check_paged($num = null){
   } else {
     return $output;
   }
+}
+
+//function for the contact form
+function codesavages_save_contact(){
+  $name = wp_strip_all_tags($_POST['name']);
+  $email = wp_strip_all_tags($_POST['email']);
+  $message = wp_strip_all_tag($_POST['message']);
+
+
+  wp_insert_post();
+
+  die();
 }
