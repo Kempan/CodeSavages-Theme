@@ -73,17 +73,130 @@ add_action('widgets_init', function(){
 });
 
 
-//---------Footer widget ----------//
+//---------Footer widgets ----------//
 
-class Codesavages_Footer_Widget extends WP_Widget{
+class Codesavages_Footer_Widget_Left extends WP_Widget{
     //setup the widget name, desc etc..
     public function __construct(){
 
-        $widget_ops = array(
+        $widget_ops_left = array(
             'classname' => 'codesavages-footer-widget',
             'description' => 'Custom Codesavages Footer Widget'
         );
-        parent::__construct('codesavages_footer', 'CodeSavages Footer', $widget_ops);
-
+        parent::__construct('codesavages_footer_left', 'CodeSavages Footer Section 1', $widget_ops_left);
     }
-};
+
+    //back-end display of widget
+    public function form($instance){
+        echo '<p><strong>No options for this widget!</strong></p></br><p>You can controll the fields of this widget from <a href="./admin.php?page=codesavages_footer">This</a> page</p>';
+    }
+
+    //Front-end display of widget
+    public function widget($args, $instance){
+        $firstFirst = esc_attr(get_option('left_first'));
+        $firstSecond = esc_attr(get_option('left_second'));
+        $firstThird = esc_attr(get_option('left_third'));
+
+        echo $args['before_widget'];
+        ?>
+        <div class="col-md-4 offset-md-1 mt-md-0 mt-3 text-center">
+
+            <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+            <p><?php echo $firstFirst ?></p>
+            <p><?php echo $firstSecond ?></p>
+            <p><?php echo $firstThird ?></p>
+
+        </div>
+        <?php
+        echo $args['after_widget'];
+    }
+
+
+}
+add_action('widgets_init', function(){
+    register_widget('Codesavages_Footer_Widget_left');
+});
+
+class Codesavages_Footer_Widget_Right extends WP_Widget{
+    //setup the widget name, desc etc..
+    public function __construct(){
+
+        $widget_ops_right = array(
+            'classname' => 'codesavages-footer-widget',
+            'description' => 'Custom Codesavages Footer Widget'
+        );
+        parent::__construct('codesavages_footer_right', 'CodeSavages Footer Section 3', $widget_ops_right);
+    }
+
+    //back-end display of widget
+    public function form($instance){
+        echo '<p><strong>No options for this widget!</strong></p></br><p>You can controll the fields of this widget from <a href="./admin.php?page=codesavages_footer">This</a> page</p>';
+    }
+
+    //Front-end display of widget
+    public function widget($args, $instance){
+        $secondFirst = esc_attr(get_option('right_first'));
+        $secondSecond = esc_attr(get_option('right_second'));
+        $secondThird = esc_attr(get_option('right_third'));
+
+        echo $args['before_widget'];
+        ?>
+        <div class="col-md-4 offset-md-1 mt-md-0 mt-3 text-center">
+
+            <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+            <p><?php echo $secondFirst ?></p>
+            <p><?php echo $secondSecond ?></p>
+            <p><?php echo $secondThird ?></p>
+
+        </div>
+        <?php
+        echo $args['after_widget'];
+    }
+
+
+}
+add_action('widgets_init', function(){
+    register_widget('Codesavages_Footer_Widget_Right');
+});
+
+class Codesavages_Footer_Widget_Mid extends WP_Widget{
+    //setup the widget name, desc etc..
+    public function __construct(){
+
+        $widget_ops_mid = array(
+            'classname' => 'codesavages-footer-widget',
+            'description' => 'Custom Codesavages Footer Widget'
+        );
+        parent::__construct('codesavages_footer_mid', 'CodeSavages Footer Section 2', $widget_ops_mid);
+    }
+
+    //back-end display of widget
+    public function form($instance){
+        echo '<p><strong>No options for this widget!</strong></p></br><p>You can controll the fields of this widget from <a href="./admin.php?page=codesavages_footer">This</a> page</p>';
+    }
+
+    //Front-end display of widget
+    public function widget($args, $instance){
+        $secondFirst = esc_attr(get_option('right_first'));
+        $secondSecond = esc_attr(get_option('right_second'));
+        $secondThird = esc_attr(get_option('right_third'));
+
+        echo $args['before_widget'];
+        ?>
+        <div class="col-md-4 offset-md-1 mt-md-0 mt-3 text-center">
+
+            <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+            <p><?php echo $secondFirst ?></p>
+            <p><?php echo $secondSecond ?></p>
+            <p><?php echo $secondThird ?></p>
+
+        </div>
+        <?php
+        echo $args['after_widget'];
+    }
+
+
+}
+add_action('widgets_init', function(){
+    register_widget('Codesavages_Footer_Widget_Mid');
+});
