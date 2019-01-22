@@ -7,7 +7,7 @@
 @import 'base/wordpress';
 
 /*
-	Generic 
+	Generic
 	------------------------------------------------
 */
 .background-image { background-position: center center; background-size: cover; background-repeat: no-repeat; }
@@ -350,9 +350,17 @@ h1{ font-size: 48px; font-weight: 200; color: rgb(40, 40, 40);
 .codesavages-footer{
   color: rgb(255, 255, 255);
   background-color: #333;
-  padding: 20px 0;
+  padding: 10px 0;
   display: block;
+
+  .footer-copyright{
+    bottom: 15px;
+    left: 5px;
+    position: relative;
+    color: rgba(255,255,255,0.3)
+  }
 }
+
 
 /* 
 	Ajax Loading 

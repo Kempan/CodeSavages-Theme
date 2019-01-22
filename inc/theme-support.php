@@ -77,6 +77,45 @@ function codesavages_sidebar_init(){
 }
 add_action('widgets_init', 'codesavages_sidebar_init');
 
+
+/*
+	========================
+		CUSTOM FOOTER FUNCTIONS
+	========================
+*/
+function codesavages_custom_footer_init(){
+    register_sidebar( array(
+        'name' => 'Footer Sidebar 1',
+        'id' => 'footer-sidebar-1',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name' => 'Footer Sidebar 2',
+        'id' => 'footer-sidebar-2',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name' => 'Footer Sidebar 3',
+        'id' => 'footer-sidebar-3',
+        'description' => 'Appears in the footer area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+add_action('widgets_init', 'codesavages_custom_footer_init');
+
+
+
 /*
 	========================
 		BLOG LOOP CUSTOM FUNCTIONS

@@ -7,7 +7,7 @@
 */
 
 class Codesavages_Profile_Widget extends WP_Widget{
-  
+
   //setup the widget name, desc etc..
   public function __construct(){
 
@@ -34,7 +34,7 @@ class Codesavages_Profile_Widget extends WP_Widget{
     $twitter_icon = esc_attr( get_option( 'twitter_handler' ) );
     $facebook_icon = esc_attr( get_option( 'facebook_handler' ) );
     $instagram_icon = esc_attr( get_option( 'instagram_handler' ) );
-  
+
     echo $args['before_widget'];
     ?>
 
@@ -51,16 +51,16 @@ class Codesavages_Profile_Widget extends WP_Widget{
 
         <?php if( empty( $twitter_icon ) ): ?>
           <a href="https://twitter.com/"><i class="fab fa-twitter sidebar-icon"></i></a>
-        <?php endif; 
+        <?php endif;
         if( empty( $instagram_icon ) ): ?>
           <a href="https://instagram.com/"><i class="fab fa-instagram sidebar-icon"></i></a>
-        <?php endif; 
+        <?php endif;
         if( empty( $facebook_icon ) ): ?>
           <a href="https://facebook.com/"><i class="fab fa-facebook sidebar-icon"></i></a>
         <?php endif; ?>
 
       </div>
-      
+
     </div>
 
     <?php
@@ -71,3 +71,19 @@ class Codesavages_Profile_Widget extends WP_Widget{
 add_action('widgets_init', function(){
   register_widget('Codesavages_Profile_Widget');
 });
+
+
+//---------Footer widget ----------//
+
+class Codesavages_Footer_Widget extends WP_Widget{
+    //setup the widget name, desc etc..
+    public function __construct(){
+
+        $widget_ops = array(
+            'classname' => 'codesavages-footer-widget',
+            'description' => 'Custom Codesavages Footer Widget'
+        );
+        parent::__construct('codesavages_footer', 'CodeSavages Footer', $widget_ops);
+
+    }
+};
