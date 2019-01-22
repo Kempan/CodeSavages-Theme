@@ -118,4 +118,45 @@ $(function () {
     $('.codesavages-sidebar').toggleClass('sidebar-closed');
   });
 
+
+
+
+
+/* Contact Form Submission*/
+
+$('#codesavagesContactForm').on('submit', function(e){
+  e.preventDefault();
+
+  var form = $(this),
+      name = form.find('#name').val(),
+      email = form.find('#email').val(),
+      message = form.find('#message').val();
+      ajaxUrl = form.data('url');
+
+if( name === '' || email === '' || message === ''){
+
+  return;
+}
+
+      $.ajax({
+
+        url: ajaxUrl,
+        type: 'post',
+        data: {
+          name: name,
+          email: email,
+          message: message,
+          action: 'codesavages_save_user_contact_form'
+        },
+        error: function (response) {
+          console.log(response);
+        },
+        success: function (response) {
+        
+        }
+
+    });
+    
+  });
+
 });

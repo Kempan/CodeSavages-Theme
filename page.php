@@ -11,7 +11,7 @@
         <main id="main" class="site-main">
 
 
-            <div class="container codesavages-posts-container">
+            <div class="container">
                 <?php
 
                 if( have_posts()):
