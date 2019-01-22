@@ -99,14 +99,14 @@ class Codesavages_Footer_Widget_Left extends WP_Widget{
 
         echo $args['before_widget'];
         ?>
-        <div class="col-md-4 offset-md-1 mt-md-0 mt-3 text-center">
+
 
             <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
             <p><?php echo $firstFirst ?></p>
             <p><?php echo $firstSecond ?></p>
             <p><?php echo $firstThird ?></p>
 
-        </div>
+
         <?php
         echo $args['after_widget'];
     }
@@ -141,14 +141,12 @@ class Codesavages_Footer_Widget_Right extends WP_Widget{
 
         echo $args['before_widget'];
         ?>
-        <div class="col-md-4 offset-md-1 mt-md-0 mt-3 text-center">
 
-            <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
-            <p><?php echo $secondFirst ?></p>
-            <p><?php echo $secondSecond ?></p>
-            <p><?php echo $secondThird ?></p>
+        <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+        <p><?php echo $secondFirst ?></p>
+        <p><?php echo $secondSecond ?></p>
+        <p><?php echo $secondThird ?></p>
 
-        </div>
         <?php
         echo $args['after_widget'];
     }
@@ -183,14 +181,14 @@ class Codesavages_Footer_Widget_Mid extends WP_Widget{
 
         echo $args['before_widget'];
         ?>
-        <div class="col-md-4 offset-md-1 mt-md-0 mt-3 text-center">
 
-            <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
-            <p><?php echo $secondFirst ?></p>
-            <p><?php echo $secondSecond ?></p>
-            <p><?php echo $secondThird ?></p>
 
-        </div>
+        <h5 class="text-uppercase font-weight-bold">Kontakt</h5>
+        <p><?php echo $secondFirst ?></p>
+        <p><?php echo $secondSecond ?></p>
+        <p><?php echo $secondThird ?></p>
+
+
         <?php
         echo $args['after_widget'];
     }

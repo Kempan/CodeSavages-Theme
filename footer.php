@@ -39,30 +39,37 @@
         </div>
     </div>-->
 
-    <div id="footer-sidebar" class="secondary">
-        <div id="footer-sidebar1">
-            <?php
-            if(is_active_sidebar('footer-sidebar-1')){
-                dynamic_sidebar('footer-sidebar-1');
-            }
-            ?>
-        </div>
-        <div id="footer-sidebar2">
-            <?php
-            if(is_active_sidebar('footer-sidebar-2')){
-                dynamic_sidebar('footer-sidebar-2');
-            }
-            ?>
-        </div>
-        <div id="footer-sidebar3">
-            <?php
-            if(is_active_sidebar('footer-sidebar-3')){
-                dynamic_sidebar('footer-sidebar-3');
-            }
-            ?>
+    <div class="container-fluid text-center text-md-left">
+        <div id="footer-sidebar" class="secondary row">
+            <div id="footer-sidebar1" class="col-md-4 mt-md-0 mt-3 text-center">
+                <?php
+                if(is_active_sidebar('footer-sidebar-1')){
+                    dynamic_sidebar('footer-sidebar-1');
+                }
+                ?>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div id="footer-sidebar2" class="col-md-4 mt-md-0 mt-3 text-center">
+                <?php
+                if(is_active_sidebar('footer-sidebar-2')){
+                    dynamic_sidebar('footer-sidebar-2');
+                }
+                ?>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div id="footer-sidebar3" class="col-md-4 mt-md-0 mt-3 text-center">
+                <?php
+                if(is_active_sidebar('footer-sidebar-3')){
+                    dynamic_sidebar('footer-sidebar-3');
+                }
+                ?>
+            </div>
+
+            <div class="footer-copyright">
+                © CodeSavages 2019
+            </div>
         </div>
     </div>
-
 
 
 </footer>
