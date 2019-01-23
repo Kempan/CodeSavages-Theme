@@ -172,7 +172,7 @@ form.find('input, button, textarea').attr('disabled','disabled');
        
           $(".js-form-submission").removeClass("js-show-feedback");
           $(".js-form-error").addClass("js-show-feedback");
-          form.find('input, button, textarea').removeattr('disabled');
+          form.find('input, button, textarea').removeAttr('disabled');
 
         },
         success: function (response) {
@@ -181,7 +181,7 @@ form.find('input, button, textarea').attr('disabled','disabled');
             setTimeout(function(){
               $(".js-form-submission").removeClass("js-show-feedback");
               $(".js-form-error").addClass("js-show-feedback");
-              form.find('input, button, textarea').removeattr('disabled');
+              form.find('input, button, textarea').removeAttr('disabled');
             },2000);
 
           }else {
@@ -189,7 +189,7 @@ form.find('input, button, textarea').attr('disabled','disabled');
               setTimeout(function(){
               $(".js-form-submission").removeClass("js-show-feedback");
               $(".js-form-success").addClass("js-show-feedback");
-              form.find('input, button, textarea').removeattr('disabled').val('');
+              form.find('input, button, textarea').removeAttr('disabled').val('');
             },2000);
 
           }
