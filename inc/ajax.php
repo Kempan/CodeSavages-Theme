@@ -114,7 +114,7 @@ function codesavages_check_paged($num = null){
 function codesavages_save_contact(){
   $title = wp_strip_all_tags($_POST["name"]);
   $email = wp_strip_all_tags($_POST["email"]);
-  $message = wp_strip_all_tag($_POST["message"]);
+  $message = wp_strip_all_tags($_POST["message"]);
 
   $args = array(
     'post_title' => $title,
@@ -147,7 +147,6 @@ function codesavages_save_contact(){
     echo 0;
 
   }
-
 
   die();
 }

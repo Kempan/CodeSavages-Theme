@@ -1,4 +1,4 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 
   /* Init functions */
   revealPosts();
@@ -8,18 +8,17 @@ jQuery(document).ready(function($) {
 
 
   /*Sticky scroll function*/
-  $(window).scroll(function(e){
-      var $el = $('.nav-container');
-      var isPositionFixed = ($el.css('position') == 'fixed');
-      if ($(this).scrollTop() > 466 && !isPositionFixed){
-          $el.css({'position': 'fixed', 'top': '0px'});
-          $('.navbar').css({'background': 'rgba(0,0,0,0.75)'});
-          console.log("asd");
-      }
-      if ($(this).scrollTop() < 466 && isPositionFixed){
-          $el.css({'position': 'absolute', 'top': 'unset'});
-          $('.navbar').css({'background': 'rgba(255,255,255,.3)'});
-      }
+  $(window).scroll(function (e) {
+    var $el = $('.nav-container');
+    var isPositionFixed = ($el.css('position') == 'fixed');
+    if ($(this).scrollTop() > 466 && !isPositionFixed) {
+      $el.css({ 'position': 'fixed', 'top': '0px' });
+      $('.navbar').css({ 'background': 'rgba(0,0,0,0.75)' });
+    }
+    if ($(this).scrollTop() < 466 && isPositionFixed) {
+      $el.css({ 'position': 'absolute', 'top': 'unset' });
+      $('.navbar').css({ 'background': 'rgba(255,255,255,.3)' });
+    }
   });
 
 
@@ -137,83 +136,75 @@ jQuery(document).ready(function($) {
 
 
 
-/* Contact Form Submission*/
+  /* Contact Form Submission*/
 
-$('#codesavagesContactForm').on('submit', function(e){
-  e.preventDefault();
+  $('#codesavagesContactForm').on('submit', function (e) {
+    e.preventDefault();
 
-  $('.is-invalid').removeClass('is-invalid');
-  $('.js-show-feedback').removeClass('js-show-feedback');
+    $('.is-invalid').removeClass('is-invalid');
+    $('.js-show-feedback').removeClass('js-show-feedback');
 
 
-  var form = $(this),
+    var form = $(this),
       name = form.find('#name').val(),
       email = form.find('#email').val(),
       message = form.find('#message').val();
-      ajaxurl = form.data('url');
+    ajaxurl = form.data('url');
 
-if( name === ''){
-  $('#name').parent('.form-group').addClass('is-invalid');
-  return;
-}
+    if (name === '') {
+      $('#name').parent('.form-group').addClass('is-invalid');
+      return;
+    }
 
-if( email === ''){
-  $('#email').parent('.form-group').addClass('is-invalid');
-  return;
-}
+    if (email === '') {
+      $('#email').parent('.form-group').addClass('is-invalid');
+      return;
+    }
 
-if( message === ''){
-  $('#message').parent('.form-group').addClass('is-invalid');
-  return;
-}
+    if (message === '') {
+      $('#message').parent('.form-group').addClass('is-invalid');
+      return;
+    }
 
-form.find('input, button, textarea').attr('disabled','disabled');
+    form.find('input, button, textarea').attr('disabled', 'disabled');
 
-  $(".js-form-submission").addClass("js-show-feedback");
+    $(".js-form-submission").addClass("js-show-feedback");
 
+    //contact form ajax
+    $.ajax({
 
+      url: ajaxurl,
+      type: 'post',
+      data: {
+        name: name,
+        email: email,
+        message: message,
+        action: 'codesavages_save_user_contact_form'
+      },
+      error: function (response) {
+        $(".js-form-submission").removeClass("js-show-feedback");
+        $(".js-form-error").addClass("js-show-feedback");
+        form.find('input, button, textarea').removeAttr('disabled');
+      },
+      success: function (response) {
+        if (response == 0) {
 
-//contact form ajax
+          setTimeout(function () {
+            $(".js-form-submission").removeClass("js-show-feedback");
+            $(".js-form-error").addClass("js-show-feedback");
+            form.find('input, button, textarea').removeAttr('disabled');
+          }, 2000);
 
-      $.ajax({
+        } else {
 
-        url: ajaxurl,
-        type: 'post',
-        data: {
-          name: name,
-          email: email,
-          message: message,
-          action: 'codesavages_save_user_contact_form'
-        },
-        error: function (response) {
-       
-          $(".js-form-submission").removeClass("js-show-feedback");
-          $(".js-form-error").addClass("js-show-feedback");
-          form.find('input, button, textarea').removeAttr('disabled');
+          setTimeout(function () {
+            $(".js-form-submission").removeClass("js-show-feedback");
+            $(".js-form-success").addClass("js-show-feedback");
+            form.find('input, button, textarea').removeAttr('disabled').val('');
+          }, 2000);
 
-        },
-        success: function (response) {
-          if( response == 0){
-            
-            setTimeout(function(){
-              $(".js-form-submission").removeClass("js-show-feedback");
-              $(".js-form-error").addClass("js-show-feedback");
-              form.find('input, button, textarea').removeAttr('disabled');
-            },2000);
-
-          }else {
-
-              setTimeout(function(){
-              $(".js-form-submission").removeClass("js-show-feedback");
-              $(".js-form-success").addClass("js-show-feedback");
-              form.find('input, button, textarea').removeAttr('disabled').val('');
-            },2000);
-
-          }
         }
-      
+      }
     });
-    
   });
-
 });
