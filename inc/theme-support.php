@@ -8,6 +8,19 @@
 
 
 /*
+    WooCommerce Product Theme Supports
+*/
+
+//makes it possible to use zoom, lightbox and slider on your products.
+add_action( 'after_setup_theme', 'yourtheme_setup' );
+ 
+function yourtheme_setup() {
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+
+/*
   ---------- POST FORMATS ----------
 */
 $options = get_option('post_formats');
@@ -250,3 +263,4 @@ function codesavages_get_post_navigation(){
     require(get_template_directory() . '/inc/templates/codesavages-comment-nav.php');
   endif;
 }
+
