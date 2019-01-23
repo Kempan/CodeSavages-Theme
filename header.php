@@ -81,7 +81,7 @@ $url = get_site_url();
               <?php print $slogan ?>
           </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars codesavage-hamburger"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbar-content">

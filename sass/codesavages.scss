@@ -111,8 +111,10 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
   display: block;
   text-align: center;
 }
-
-
+.codesavage-hamburger{
+  color:white;
+}
+//Dark Navbar
 .navbar-codesavages-dark{text-align: center; border: none; border-radius: 0; min-height: auto; margin-bottom: 0;
   background: rgba(0, 0, 0, 0.488); border-top: 1px solid rgba(0, 0, 0, 0.7); 
   
@@ -153,28 +155,32 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
 		}
   }
 
-.navbar-brand{
-  img{
+  .navbar-brand{
+    img{
+      height: 30px;
+      width: 80px;
+    }
     height: 30px;
     width: 80px;
+    color: white;
+    font-weight: bold;
+    text-shadow: none;
+    opacity: 1;
+    position: absolute;
+    &:hover{
+      color: #fff;
+    }
+
   }
-  height: 30px;
-  width: 80px;
-  color: white;
-  font-weight: bold;
-  text-shadow: none;
-  opacity: 1;
-  position: absolute;
-  &:hover{
-    color: #fff;
+  .navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
   }
 
-}
-.navbar-nav {
-  float:none;
-  margin:0 auto;
-  display: block;
-  text-align: center;
+.codesavage-hamburger{
+  color:white;
 }
 }
 
