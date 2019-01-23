@@ -63,6 +63,12 @@
         }
     }
 }
+.product_meta{
+
+  display: flex;
+  flex-direction: column;
+
+}
 .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
   float: none;
 }
