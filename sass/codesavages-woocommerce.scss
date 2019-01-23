@@ -72,6 +72,9 @@
 .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
   float: none;
 }
+.woocommerce-product-gallery__image {
+  pointer-events: none;
+}
 //Cart
 .woocommerce-checkout{
     .entry-title{
