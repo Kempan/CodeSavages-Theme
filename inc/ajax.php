@@ -123,12 +123,31 @@ function codesavages_save_contact(){
     'post_Status'=> 'publish',
     'post_type'=> 'codesavages-contact',
     'meta_input'=> array(
-    '_contact_email_value_key' => $email
-    )
+    '_contact_email_value_key' => $email,
+    ),
   );
 
   $postID = wp_insert_post($args);
 
+  if($postID !== 0){
+
+    $to = get_bloginfo('admin_email');
+    $subject = 'Codesavages Contact Form - '.$title;
+
+    $headers[] = 'From: '.get_bloginfo('name'). ' <'.$email.'>';
+    $headers[] = 'Reply-To: '.$title. ' <'.$email.'>';
+    $headers[] = 'content-Type: text/html: charset=UTF-8';
+
+    wp_mail($to, $subject, $message, $headers);
+
     echo $postID;
+
+  } else{
+
+    echo 0;
+
+  }
+
+
   die();
 }
