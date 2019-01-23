@@ -12,9 +12,9 @@
 */
 
 //makes it possible to use zoom, lightbox and slider on your products.
-add_action( 'after_setup_theme', 'yourtheme_setup' );
+add_action( 'after_setup_theme', 'wooComProd' );
  
-function yourtheme_setup() {
+function wooComProd() {
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
