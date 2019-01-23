@@ -15,4 +15,7 @@ https://fontawesome.com/
 Ace version 1.1.0<br>
 https://ace.c9.io/
 
+WooCommerce ersion 3.5.3<br>
+https://docs.woocommerce.com/documentation/plugins/woocommerce/
+
 Custom built wordpress theme by Martin, Jesper and Joakim
