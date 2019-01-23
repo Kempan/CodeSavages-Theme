@@ -28,7 +28,7 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
 */
 .header-container { @extend %text-shadow; position: relative; display: block; height: 526px; width: 100%; }
 
-.site-title { color: #fff; margin: 0; font-size: 80px; }
+.site-title { color: #fff; margin: 0; font-size: 68px; }
 .site-description { font-size: 24px; color: #fff; margin-top: 0.1em; }
 
 .nav-container{
