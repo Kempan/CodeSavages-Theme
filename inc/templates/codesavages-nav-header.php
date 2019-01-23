@@ -13,17 +13,16 @@
       </div>
       <h2 class="codesavages-navbar-slogan"><?php print $slogan; ?></h2>
     </div>
-    
-    
-    <div class="codesavages-image-wapper">
 
-    </div>
+
   </div>
 </div>
+
 
 <form method="post" action="options.php" class="codesavages-general-form">
   <?php settings_fields('codesavages-navbar-group'); ?>
   <?php do_settings_sections('codesavages_theme_header_nav') ?>
   <!-- ATTRIBUTE 3 BYTER ID FÖR ATT INTE STÖRA INPUT SUBMIT  -->
   <?php submit_button('Save Changes', 'primary', 'btnSubmit'); ?>
+    <input type="text" id='color-picker' value="#bada55" />
 </form>

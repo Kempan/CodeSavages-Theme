@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-  /* Init functions */
+    /* Init functions */
   revealPosts();
 
   /* Variable declaration */

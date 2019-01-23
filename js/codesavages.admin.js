@@ -1,3 +1,6 @@
+jQuery(document).ready(function ($) {
+    $('#color-picker').iris();
+});
 
 // media uploader for sidebar picture
 $(function () {
