@@ -39,6 +39,7 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
   z-index: 100;
   height: 60px;
   .navbar-brand{
+    position: absolute;
     &:hover{
       color: #fff;
     }
