@@ -10,9 +10,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('codesavages-format-gallery'); ?>>
     <header class="entry-header text-center">
 
-        <?php if (codesavages_get_attachment()):
-            $attachments = codesavages_get_attachment(6);
-            ?>
+        <?php if (codesavages_get_attachment()): ?>
             <div id="post-gallery-<?php the_ID();?>" class="carousel slide" data-ride="carousel">
 
                 <div class="carousel-inner" role="listbox">
