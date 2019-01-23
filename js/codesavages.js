@@ -6,6 +6,23 @@ $(function () {
   /* Variable declaration */
   let lastScroll = 0;
 
+
+  /*Sticky scroll function*/
+  $(window).scroll(function(e){
+      var $el = $('.nav-container');
+      var isPositionFixed = ($el.css('position') == 'fixed');
+      if ($(this).scrollTop() > 466 && !isPositionFixed){
+          $el.css({'position': 'fixed', 'top': '0px'});
+          $('.navbar').css({'background': 'rgba(0,0,0,0.75)'});
+          console.log("asd");
+      }
+      if ($(this).scrollTop() < 466 && isPositionFixed){
+          $el.css({'position': 'absolute', 'top': 'unset'});
+          $('.navbar').css({'background': 'rgba(255,255,255,.3)'});
+      }
+  });
+
+
   /* Ajax functions */
   $(document).on('click', '.codesavages-load-button:not(.loading)', function () {
 
