@@ -24,7 +24,7 @@
           color: grey;
             &:hover,
             &:focus {
-              color: white;
+              color: black;
             }
         }
     }
@@ -32,6 +32,14 @@
 
 //Products
 .codesavages-woocommerce-container{
+  margin-top: 20px;
+    .summary{
+        .product_title{
+          &:before,&:after{
+            content:none;
+          }
+        }
+    }
     .products{
         .type-product {
           text-align: center;
@@ -48,7 +56,7 @@
             color: grey;
             &:hover,
             &:focus {
-              color: white;
+              color: black;
             }
 
           }
@@ -68,7 +76,7 @@
     .woocommerce-cart-form{
         .product-name{
             a:hover{
-              color: white;
+              color: black;
             }
         }
         .product-remove{
@@ -82,18 +90,38 @@
   width: 50%;
 }
 //Checkout
-
-.woocommerce-checkout{
-    .col-6{
-      .form-row{
-        display:block;
+.woocommerce {
+  .woocommerce-form-coupon-toggle {
+    .woocommerce-info {
+      &:before{
+        content: none;
+      }
+    }
+  }
+  .woocommerce-checkout {
+    .col-6 {
+      .form-row {
+        display: block;
         width: 100%;
-          .input-text{
-              text-align:left;
-          }
+        .input-text {
+          text-align: left;
+        }
       }
     }
 
+  }
+}
+
+//Mini cart
+.woocommerce-page{
+    .mini-cart{
+        .wcmenucart-contents::after{
+          opacity: 0;
+        }
+        .fa-shopping-cart{
+          margin-right: 6px;
+        }
+    }
 }
 
 

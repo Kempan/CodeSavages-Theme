@@ -62,7 +62,7 @@ function sk_wcmenucart() {
 
             $menu_item .= $cart_contents_count;
             $menu_item .= '<i class="fa fa-shopping-cart"></i>';
-            $menu_item .= ' / '. $cart_total;
+            $menu_item .= " ". $cart_total;
             $menu_item .= '</a></li>';
 
         }
