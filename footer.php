@@ -66,7 +66,7 @@
             </div>
 
             <div class="footer-copyright">
-                © CodeSavages 2019
+                © CodeSavages <?php echo date('Y'); ?>
             </div>
         </div>
     </div>
