@@ -521,3 +521,28 @@ h2.codesavages-description{
 .last-field{
   margin-bottom: 40px;
 }
+
+
+/*
+  Contact form
+*/
+
+
+
+.form-control-msg{
+
+  display:none;
+}
+
+.is-invalid{
+
+.form-control-msg{
+
+  display:block;
+}
+
+}
+
+.js-show-feedback{
+  display: block;
+}
