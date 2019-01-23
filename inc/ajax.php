@@ -112,12 +112,23 @@ function codesavages_check_paged($num = null){
 
 //function for the contact form
 function codesavages_save_contact(){
-  $name = wp_strip_all_tags($_POST['name']);
-  $email = wp_strip_all_tags($_POST['email']);
-  $message = wp_strip_all_tag($_POST['message']);
+  $title = wp_strip_all_tags($_POST["name"]);
+  $email = wp_strip_all_tags($_POST["email"]);
+  $message = wp_strip_all_tag($_POST["message"]);
 
+  $args = array(
+    'post_title' => $title,
+    'post_content'=> $message,
+    'post_author'=> 1,
+    'post_Status'=> 'publish',
+    'post_type'=> 'codesavages-contact',
+    'meta_input'=> array(
+    '_contact_email_value_key' => $email
+    )
+  );
 
-  wp_insert_post();
+  $postID = wp_insert_post($args);
 
+    echo $postID;
   die();
 }
