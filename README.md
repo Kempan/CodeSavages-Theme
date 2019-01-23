@@ -2,7 +2,6 @@
 
 Demo: http://myrmarker.se/projects/wordpress
 
-Please install following dependencies:
 
 Bootstrap version 4.1.3<br>
 https://getbootstrap.com/
