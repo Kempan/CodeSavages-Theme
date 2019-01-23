@@ -2,14 +2,18 @@
 
 Demo: http://myrmarker.se/projects/wordpress
 
-#Versions:
+Please install following dependencies:
 
-Bootstrap   4.1.3
+Bootstrap version 4.1.3
+https://getbootstrap.com/
 
-Jquery      3.3.1
+Jquery version 3.3.1
+https://jquery.com/
 
-Fontawesome 5.6.3
+Fontawesome version 5.6.3
+https://fontawesome.com/
 
-Ace         1.1.0
+Ace version 1.1.0
+https://ace.c9.io/
 
 Custom built wordpress theme by Martin, Jesper and Joakim
