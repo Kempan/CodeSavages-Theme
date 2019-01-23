@@ -1,4 +1,4 @@
-$(function () {
+jQuery(document).ready(function($) {
 
   /* Init functions */
   revealPosts();
@@ -131,16 +131,16 @@ $('#codesavagesContactForm').on('submit', function(e){
       name = form.find('#name').val(),
       email = form.find('#email').val(),
       message = form.find('#message').val();
-      ajaxUrl = form.data('url');
+      ajaxurl = form.data('url');
 
-if( name === '' || email === '' || message === ''){
+if( name === '' || email == '' || message == ''){
 
   return;
 }
 
       $.ajax({
 
-        url: ajaxUrl,
+        url: ajaxurl,
         type: 'post',
         data: {
           name: name,
@@ -152,7 +152,11 @@ if( name === '' || email === '' || message === ''){
           console.log(response);
         },
         success: function (response) {
-        
+          if( response == 0){
+            console.log('unable to save');
+          }else {
+            console.log('message saved');
+          }
         }
 
     });
