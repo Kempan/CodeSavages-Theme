@@ -95,6 +95,25 @@ h2.codesavages-navbar-slogan{
   background-repeat: no-repeat;
   background-size: cover;
 }
+/*Nav preview*/
+.codesavage-navbar-preview{
+  width:400px;
+  height:40px;
+  margin:auto;
+  background: red;
+  display:flex;
+  justify-content: center;
+}
+.menu-item{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.container-preview{
+  background-color:white;
+  padding:10px;
+  width:450px;
+  margin: 0 auto;
+}
 
 /*
 	Color picker

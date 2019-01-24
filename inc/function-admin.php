@@ -44,17 +44,17 @@ function codesavages_nav_header_options(){
 add_settings_field('navbar-logo','Navbar Logo','codesavages_navbar_logo','codesavages_theme_header_nav','codesavages-nav-header-options');
 add_settings_field('navbar-slogan','Slogan','codesavages_navbar_slogan','codesavages_theme_header_nav','codesavages-nav-header-options');
 add_settings_field('navbar-background-color','Background Color','codesavages_background_color','codesavages_theme_header_nav','codesavages-nav-header-options');
-add_settings_field('navbar-text-color','Text Color','codesavages_text_color','codesavages_theme_header_nav','codesavages-nav-header-options');
+//add_settings_field('navbar-text-color','Text Color','codesavages_text_color','codesavages_theme_header_nav','codesavages-nav-header-options');
 //callback
 
 function codesavages_background_color(){
     $bgColor = esc_attr(get_option('nav_bg_color'));
-    echo '   <input type="text" name="nav_bg_color" id="bg-color" class="form-control demo" data-format="rgb" data-opacity=".5" value="'.$bgColor.'">';
+    echo '   <input type="text" name="nav_bg_color" id="bg-color" class="form-control demo" data-format="rgb" data-opacity=".5" value="'.($bgColor ? $bgColor : '').'">';
 }
-    function codesavages_text_color(){
-        $textColor = esc_attr(get_option('nav_text_color'));
-        echo '   <input type="text" name="nav_text_color" id="text-color" class="form-control demo" data-format="rgb" data-opacity=".5" value="'.$textColor.'">';
-    }
+/*function codesavages_text_color(){
+    $textColor = esc_attr(get_option('nav_text_color'));
+    echo '   <input type="text" name="nav_text_color" id="text-color" class="form-control demo" data-format="rgb" data-opacity=".5" value="'.($textColor ? $textColor : '').'">';
+}*/
 function codesavages_navbar_logo(){
   $logo = esc_attr(get_option('navbar_logo'));
   if(empty($logo)){
