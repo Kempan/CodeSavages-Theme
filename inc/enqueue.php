@@ -15,18 +15,18 @@ function codesavages_load_admin_scripts($hook){
   //   return;
   // }
   wp_register_style('codesavages_admin', get_template_directory_uri() . '/css/codesavages.admin.css', array(), '1.0.0', 'all');
-  wp_register_style('iris', get_template_directory_uri() . '/css/iris.min.css', array(), '1.0.7', 'all');
+  wp_register_style('minicolors', get_template_directory_uri() . '/css/jquery.minicolors.css', array(), '2.3.4', 'all');
   wp_enqueue_style('codesavages_admin');
-  wp_enqueue_style('iris');
+  wp_enqueue_style('minicolors');
 
 
 
   wp_enqueue_media();
 
   wp_register_script('codesavages-admin-script', get_template_directory_uri() . '/js/codesavages.admin.js', array('jquery'), '1.0.0', true);
-  wp_register_script('iris', get_template_directory_uri() . '/js/jquery/iris.js', false, '1.0.7', true );
+  wp_register_script('minicolors', get_template_directory_uri() . '/js/jquery.minicolors.min.js', false, '2.3.4', true );
 
-  wp_enqueue_script('iris');
+  wp_enqueue_script('minicolors');
   wp_enqueue_script('codesavages-admin-script');
 
   if('codesavages_page_codesavages_css' == $hook){

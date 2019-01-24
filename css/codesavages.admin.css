@@ -95,3 +95,15 @@ h2.codesavages-navbar-slogan{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/*
+	Color picker
+	------------------------------------------------
+*/
+
+.minicolors-swatch{
+  top: 0!important;
+  left: 0!important;
+  width: 18px!important;
+  height: 18px!important;
+}

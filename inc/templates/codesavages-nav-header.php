@@ -4,6 +4,7 @@
 <?php
   $logo = esc_attr(get_option('navbar_logo'));
   $slogan = esc_attr(get_option('slogan'));
+    $bgColor = esc_attr(get_option('nav_bg_color'));
 ?>
 
 <div class="codesavages-logo-preview">
@@ -24,5 +25,4 @@
   <?php do_settings_sections('codesavages_theme_header_nav') ?>
   <!-- ATTRIBUTE 3 BYTER ID FÖR ATT INTE STÖRA INPUT SUBMIT  -->
   <?php submit_button('Save Changes', 'primary', 'btnSubmit'); ?>
-    <input type="text" id='color-picker' value="#bada55" />
 </form>
