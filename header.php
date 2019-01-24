@@ -11,6 +11,8 @@
 $logo = esc_attr(get_option('navbar_logo'));
 $slogan = esc_attr(get_option('slogan'));
 $url = get_site_url();
+$bgColor = esc_attr(get_option('nav_bg_color'));
+$textColor = esc_attr(get_option('nav_text_color'));
 ?>
   <head>
     <title><?php bloginfo('name'); wp_title(); ?></title>
@@ -73,7 +75,7 @@ $url = get_site_url();
         </div>
         
         <div class="nav-container">
-          <nav class="navbar navbar-expand-lg navbar-codesavages">
+          <nav class="navbar navbar-expand-lg navbar-codesavages" style="background-color:<?=$bgColor ?>">
           <a class="navbar-brand" href="<?php echo $url ?>">
               <?php if (!empty($logo)): ?>
                 <img src="<?php print $logo ?>" width="80" height="30" class="d-inline-block align-top" alt="">
