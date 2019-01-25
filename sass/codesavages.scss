@@ -32,8 +32,7 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
 .nav-container{
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width:100%;
   z-index: 100;
 
 }
