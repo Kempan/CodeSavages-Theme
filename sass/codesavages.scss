@@ -87,6 +87,9 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
   }
 }
 .navbar-brand{
+  @media only screen and (min-width: 992px) {
+    position: absolute;
+  }
   img{
     height: 30px;
     width: 80px;
@@ -97,7 +100,6 @@ a { color: rgb(26, 26, 26); @include animate( color, 320ms );
   font-weight: bold;
   text-shadow: none;
   opacity: 1;
-  position: absolute;
   &:hover{
     color: #fff;
   }
